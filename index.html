@@ -15,13 +15,13 @@
     
     <style>
         :root {
-            --brand-dark: #243534;
-            --brand-darker: #192625;
+            --brand-dark: #273a38;
+            --brand-darker: #1b2827;
             --brand-rust: #b84a32;
             --brand-rust-hover: #a03e28;
-            --brand-bg: #f7f9f9;
+            --brand-bg: #fcfbfa;
             --brand-card-bg: #ffffff;
-            --brand-text: #2c3e3d;
+            --brand-text: #222222;
             --brand-text-muted: #627271;
             --border-color: #d1dcdb;
             --max-width: 1100px;
@@ -90,7 +90,7 @@
 
         .brand-text-group span {
             font-size: 0.75rem;
-            color: #a3b8b6;
+            color: #b0c2c0;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -145,7 +145,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(184, 74, 50, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(184, 74, 50, 0.15) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -160,9 +160,9 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background-color: rgba(184, 74, 50, 0.2);
-            border: 1px solid rgba(184, 74, 50, 0.4);
-            color: #e2eceb;
+            background-color: rgba(184, 74, 50, 0.25);
+            border: 1px solid rgba(184, 74, 50, 0.45);
+            color: #f0e6e4;
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -184,7 +184,7 @@
 
         .services-subtitle {
             font-size: clamp(0.95rem, 2vw, 1.2rem);
-            color: #b8c8c7;
+            color: #c5d4d2;
             font-weight: 400;
             margin-bottom: 2.25rem;
             letter-spacing: 0.01em;
@@ -292,8 +292,8 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(36, 53, 52, 0.08);
-            border-color: #b8c8c7;
+            box-shadow: 0 12px 24px rgba(39, 58, 56, 0.08);
+            border-color: #b0c2c0;
         }
 
         .service-icon-wrapper {
@@ -401,7 +401,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
@@ -441,13 +441,13 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #a3b8b6;
+            color: #b0c2c0;
             margin-bottom: 0.3rem;
             font-weight: 500;
         }
 
         .contact-card-info strong {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: -0.01em;
             word-break: break-all;
@@ -456,7 +456,7 @@
         .coverage-note {
             text-align: center;
             margin-top: 3rem;
-            color: #a3b8b6;
+            color: #b0c2c0;
             font-size: 0.95rem;
         }
 
@@ -580,7 +580,7 @@
                         <i class="fa-solid fa-couch"></i>
                     </div>
                     <h4>Assemblage de meubles</h4>
-                    <p>Montage précis et rigoureux de tout type de mobilier (structures de lit, commodes, tables, bibliothèques et meubles en kit).</p>
+                    <p>Montage précis et rigoureux de tout type de mobilier (structures de lit, commodes, tables, bibliothèques, armoires et meubles en kit).</p>
                 </div>
                 <div class="service-card-footer">
                     <span>Assemblage solide & impeccable</span>
@@ -594,7 +594,7 @@
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
                     <h4>Installation d'accessoires</h4>
-                    <p>Pose murale sécurisée de téléviseurs, cadres, miroirs, luminaires, tringles à rideaux et accessoires de salle de bain.</p>
+                    <p>Pose murale sécurisée de téléviseurs, cadres, miroirs, luminaires, tringles à rideaux, étagères et accessoires de salle de bain.</p>
                 </div>
                 <div class="service-card-footer">
                     <span>Fixation murale sécurisée</span>
@@ -644,11 +644,11 @@
         <div class="section-header" style="color: #ffffff; margin-bottom: 3rem;">
             <h3 style="color: #ffffff;">Contactez-moi</h3>
             <div class="section-divider"></div>
-            <p style="color: #a3b8b6;">Besoin d'un coup de main ? Appelez-moi ou écrivez-moi directement.</p>
+            <p style="color: #b0c2c0;">Besoin d'un coup de main ? Appelez-moi, écrivez-moi ou visitez ma page Facebook.</p>
         </div>
 
         <div class="contact-grid">
-            <!-- Phone -->
+            <!-- Phone / WhatsApp -->
             <a href="tel:5142496089" class="contact-card">
                 <div class="contact-card-icon">
                     <i class="fa-solid fa-phone"></i>
@@ -667,6 +667,17 @@
                 <div class="contact-card-info">
                     <span>Courriel professionnel</span>
                     <strong>info@alex-handyman-montreal.com</strong>
+                </div>
+            </a>
+
+            <!-- Facebook Business Page -->
+            <a href="https://www.facebook.com/profile.php?id=61595332553100" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-card-icon" style="background-color: #1877f2;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="contact-card-info">
+                    <span>Page Facebook</span>
+                    <strong>Alex Handyman Montréal</strong>
                 </div>
             </a>
         </div>
