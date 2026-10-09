@@ -3,705 +3,668 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Handyman | Homme à tout faire - Montréal & Laval</title>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for professional icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Alex Handyman Montreal | Assemblage de Meubles & Réparations Générales</title>
     <style>
         :root {
-            --brand-dark: #273a38;
-            --brand-darker: #1b2827;
-            --brand-rust: #b84a32;
-            --brand-rust-hover: #a03e28;
-            --brand-bg: #fcfbfa;
-            --brand-card-bg: #ffffff;
-            --brand-text: #222222;
-            --brand-text-muted: #627271;
-            --border-color: #d1dcdb;
-            --max-width: 1100px;
+            --primary: #0f172a; /* Custom Navy */
+            --accent: #f97316;  /* Safety Orange */
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray: #64748b;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--brand-bg);
-            color: var(--brand-text);
+            color: var(--dark);
+            background-color: var(--light);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
         }
 
+        /* Temporary Development Mode Banner */
+        .dev-banner {
+            background-color: #fef3c7;
+            color: #92400e;
+            border-bottom: 1px solid #fde68a;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Top Navigation Bar */
         header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background-color: var(--brand-dark);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .nav-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
+        .nav-left {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 1rem;
         }
 
-        .brand-logo-area {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-        }
-
-        .brand-icon-box {
-            width: 42px;
-            height: 42px;
-            background-color: var(--brand-rust);
+        .logo-badge {
+            background-color: var(--accent);
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 44px;
+            height: 44px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
-            font-size: 1.15rem;
+            box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
         }
 
-        .brand-text-group h1 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--white);
             line-height: 1.2;
         }
 
-        .brand-text-group span {
-            font-size: 0.75rem;
-            color: #b0c2c0;
-            text-transform: uppercase;
+        .logo-subtitle {
+            font-size: 0.7rem;
             letter-spacing: 0.05em;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
-        .nav-links {
+        .nav-center {
             display: flex;
+            gap: 2rem;
             align-items: center;
-            gap: 1.75rem;
         }
 
-        .nav-links a {
-            color: #ffffff;
+        .nav-link {
+            color: #cbd5e1;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--brand-rust);
+        .nav-link:hover {
+            color: var(--white);
         }
 
-        .phone-btn-header {
-            background-color: var(--brand-rust);
-            color: #ffffff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: background-color 0.2s ease, transform 0.1s ease;
+            gap: 1rem;
         }
 
-        .phone-btn-header:hover {
-            background-color: var(--brand-rust-hover);
-            transform: translateY(-1px);
+        .lang-switch {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #334155;
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
+        }
+
+        .nav-btn:hover {
+            background-color: #ea580c;
+        }
+
+        @media (max-width: 850px) {
+            .nav-center {
+                display: none;
+            }
         }
 
         .hero {
-            background-color: var(--brand-dark);
-            color: #ffffff;
-            padding: 5rem 1.5rem 6rem;
+            background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85));
+            color: var(--white);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 5rem 1rem;
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(184, 74, 50, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .location-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: rgba(184, 74, 50, 0.25);
-            border: 1px solid rgba(184, 74, 50, 0.45);
-            color: #f0e6e4;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .location-pill i {
-            color: var(--brand-rust);
-        }
-
-        .hero h2 {
-            font-size: clamp(2.25rem, 5vw, 3.5rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
+        .hero h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            line-height: 1.15;
         }
 
-        .services-subtitle {
-            font-size: clamp(0.95rem, 2vw, 1.2rem);
-            color: #c5d4d2;
-            font-weight: 400;
-            margin-bottom: 2.25rem;
-            letter-spacing: 0.01em;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #cbd5e1;
         }
 
-        .hero-cta-group {
+        .hero-buttons {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background-color: var(--brand-rust);
-            color: #ffffff;
-            padding: 0.9rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
+        .btn {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 8px;
             font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #ea580c;
+        }
+
+        .btn-phone {
+            background-color: rgba(30, 41, 59, 0.8);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.65rem;
-            box-shadow: 0 4px 14px rgba(184, 74, 50, 0.35);
-            transition: all 0.2s ease;
+            gap: 0.6rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .btn-primary:hover {
-            background-color: var(--brand-rust-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(184, 74, 50, 0.45);
+        .btn-phone:hover {
+            background-color: rgba(51, 65, 85, 0.9);
+            border-color: #475569;
         }
 
-        .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            padding: 0.9rem 2rem;
+        .container {
+            max-width: 1100px;
+            margin: -3rem auto 3rem auto;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
             border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
-            transition: all 0.2s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.35);
-        }
-
-        .section-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 5rem 1.5rem;
-        }
-
-        .section-header {
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
             text-align: center;
-            max-width: 650px;
-            margin: 0 auto 3.5rem;
         }
 
-        .section-header h3 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            margin-bottom: 0.75rem;
-            color: var(--brand-dark);
+        /* Travel Notice Banner */
+        .travel-notice {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2rem;
+            color: #9a3412;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
         }
 
-        .section-divider {
-            width: 60px;
-            height: 4px;
-            background-color: var(--brand-rust);
-            margin: 0 auto 1rem;
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            color: var(--brand-text-muted);
-            font-size: 1.05rem;
-        }
-
-        .services-grid {
+        /* Services Grid */
+        .services-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card {
-            background-color: var(--brand-card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 2.25rem;
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            align-items: flex-start;
         }
 
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(39, 58, 56, 0.08);
-            border-color: #b0c2c0;
-        }
-
-        .service-icon-wrapper {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(184, 74, 50, 0.1);
-            color: var(--brand-rust);
+        .service-icon-box {
+            background-color: #fff7ed;
             border-radius: 12px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            margin-bottom: 1.2rem;
         }
 
-        .service-card:hover .service-icon-wrapper {
-            background-color: var(--brand-rust);
-            color: #ffffff;
-        }
-
-        .service-card h4 {
-            font-size: 1.35rem;
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
             font-weight: 700;
-            margin-bottom: 0.85rem;
-            color: var(--brand-dark);
         }
 
         .service-card p {
-            color: var(--brand-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .service-card-footer {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #edf2f2;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--brand-rust);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .about-section {
-            background-color: #ffffff;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 5rem 1.5rem;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content h3 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            font-size: 1.15rem;
-            color: var(--brand-text-muted);
-            line-height: 1.7;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .badges-row {
-            display: inline-flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: var(--brand-bg);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .badge-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
             font-size: 0.9rem;
-            color: var(--brand-dark);
+            color: var(--gray);
+            line-height: 1.5;
         }
 
-        .badge-item i {
-            color: var(--brand-rust);
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.2rem;
         }
 
-        .contact-section {
-            background-color: var(--brand-dark);
-            color: #ffffff;
-            padding: 5rem 1.5rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .contact-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 14px;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            text-decoration: none;
-            color: #ffffff;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .contact-card:hover {
-            background-color: rgba(255, 255, 255, 0.09);
-            transform: translateY(-2px);
-        }
-
-        .contact-card-icon {
-            width: 54px;
-            height: 54px;
-            background-color: var(--brand-rust);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .contact-card-info span {
+        label {
             display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #b0c2c0;
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-
-        .contact-card-info strong {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            word-break: break-all;
-        }
-
-        .coverage-note {
-            text-align: center;
-            margin-top: 3rem;
-            color: #b0c2c0;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
             font-size: 0.95rem;
+            color: var(--dark);
         }
 
-        .coverage-note i {
-            color: var(--brand-rust);
-            margin-right: 0.5rem;
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: var(--white);
         }
 
-        footer {
-            background-color: var(--brand-darker);
-            color: #9cb2b0;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.85rem;
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
         }
 
-        .footer-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
+        input.uppercase {
+            text-transform: uppercase;
         }
 
-        .footer-terms {
-            display: flex;
+        /* Direct Contact Info Grid */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            flex-wrap: wrap;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .contact-info-grid {
+                grid-template-columns: 1fr;
             }
-            .hero {
-                padding: 4rem 1rem 4.5rem;
-            }
-            .section-container {
-                padding: 3.5rem 1rem;
-            }
-            .about-section {
-                padding: 3.5rem 1rem;
-            }
-            .contact-section {
-                padding: 3.5rem 1rem;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-terms {
-                justify-content: center;
-            }
+        }
+
+        .contact-box {
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-box h3 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box a, .contact-box p {
+            color: var(--gray);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-box a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .success-msg {
+            display: none;
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 1rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="brand-logo-area">
-                <div class="brand-icon-box">
-                    <i class="fa-solid fa-hammer"></i>
-                </div>
-                <div class="brand-text-group">
-                    <h1>ALEX KRYUKOV</h1>
-                    <span>Homme à tout faire</span>
-                </div>
-            </div>
-            
-            <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#apropos">À propos</a>
-                <a href="#contact">Contact</a>
-            </nav>
+    <!-- Temporary Development Banner -->
+    <div class="dev-banner" id="devBanner">
+        🚧 Ce site est actuellement en mode de développement. / This site is currently in development mode. 🚧
+    </div>
 
-            <a href="tel:5142496089" class="phone-btn-header">
-                <i class="fa-solid fa-phone"></i>
-                <span>514-249-6089</span>
-            </a>
+    <header>
+        <div class="nav-left">
+            <div class="logo-badge">AH</div>
+            <div class="logo-text">
+                <span class="logo-title">Alex Handyman</span>
+                <span class="logo-subtitle">Montreal & Laval</span>
+            </div>
+        </div>
+        <nav class="nav-center">
+            <a href="#services" class="nav-link" id="navServices">Services</a>
+            <a href="#quote-form" class="nav-link" id="navQuote">Demander Devis</a>
+            <a href="#contact-section" class="nav-link" id="navContact">Contact</a>
+        </nav>
+        <div class="nav-right">
+            <button class="lang-switch" id="langToggle" onclick="toggleLanguage()">EN / FR</button>
+            <a href="#quote-form" class="nav-btn" id="navBtnEstimate">Demander Votre Devis</a>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <div class="location-pill">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Montréal • Laval & environs</span>
-            </div>
-            <h2>Homme à tout faire</h2>
-            <p class="services-subtitle">
-                Assemblage de meubles • Installation d'accessoires • Petites réparations
-            </p>
-            <div class="hero-cta-group">
-                <a href="tel:5142496089" class="btn-primary">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>Appeler / WhatsApp</span>
-                </a>
-                <a href="mailto:info@alex-handyman-montreal.com" class="btn-secondary">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>Envoyer un courriel</span>
-                </a>
-            </div>
+        <h1 id="heroTitle">Assemblage de Meubles Professionnel & Services de Réparation</h1>
+        <p id="heroSubtitle">Desservant Montréal & Laval avec des prix fixes transparents et un travail soigné.</p>
+        <div class="hero-buttons">
+            <a href="#quote-form" class="btn" id="heroBtn">Demander Votre Devis</a>
+            <a href="tel:+15142496089" class="btn-phone"><span style="color: #f97316;">📞</span> (514) 249-6089</a>
         </div>
     </section>
 
-    <section id="services" class="section-container">
-        <div class="section-header">
-            <h3>Mes Services</h3>
-            <div class="section-divider"></div>
-            <p>Des solutions soignées, rapides et professionnelles pour votre domicile.</p>
-        </div>
+    <div class="container">
 
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div>
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-couch"></i>
-                    </div>
-                    <h4>Assemblage de meubles</h4>
-                    <p>Montage précis et rigoureux de tout type de mobilier (structures de lit, commodes, tables, bibliothèques, armoires et meubles en kit).</p>
+        <!-- SERVICES OVERVIEW -->
+        <div class="card" id="services">
+            <h2 id="servicesHeading">Nos Services Principaux</h2>
+            <div class="services-list">
+                
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon-box">🛏️</div>
+                    <h3 id="serv1Title">Assemblage de Meubles en Boîte</h3>
+                    <p id="serv1Desc">Assemblage d'expert pour IKEA, Wayfair et meubles sur mesure incluant gardes-robes, commodes, bureaux, lits et tables.</p>
                 </div>
-                <div class="service-card-footer">
-                    <span>Assemblage solide & impeccable</span>
-                </div>
-            </div>
 
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div>
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h4>Installation d'accessoires</h4>
-                    <p>Pose murale sécurisée de téléviseurs, cadres, miroirs, luminaires, tringles à rideaux, étagères et accessoires de salle de bain.</p>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon-box">🛠️</div>
+                    <h3 id="serv2Title">Installation Murale & Ancrage</h3>
+                    <p id="serv2Desc">Ancrage mural anti-basculement sécuritaire pour commodes et bibliothèques, tablettes, miroirs et cadres.</p>
                 </div>
-                <div class="service-card-footer">
-                    <span>Fixation murale sécurisée</span>
-                </div>
-            </div>
 
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div>
-                    <div class="service-icon-wrapper">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <h4>Petites réparations</h4>
-                    <p>Corrections des petits défauts du quotidien : rebouchage de trous, retouches de peinture, ajustement de portes et petits travaux d'entretien.</p>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon-box">🚪</div>
+                    <h3 id="serv3Title">Maintenance Générale</h3>
+                    <p id="serv3Desc">Ajustement de portes, réparation de plaques de plâtre (drywall), menus travaux de menuiserie et dépannage résidentiel.</p>
                 </div>
-                <div class="service-card-footer">
-                    <span>Travail minutieux & propre</span>
-                </div>
+
             </div>
         </div>
-    </section>
 
-    <section id="apropos" class="about-section">
-        <div class="about-content">
-            <h3>Alex Kryukov • Votre Homme à tout faire</h3>
-            <p>
-                Basé à Montréal et desservant également Laval, je m'engage à fournir un travail honnête, ponctuel et de haute qualité. Que ce soit pour vous libérer du temps lors de l'assemblage de vos nouveaux achats ou pour régler les réparations qui traînent, je suis à votre service.
-            </p>
-            <div class="badges-row">
-                <div class="badge-item">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Ponctuel</span>
+        <!-- BOOKING / CONTACT FORM -->
+        <div class="card" id="quote-form">
+            <h2 id="formHeading">Demander un Devis</h2>
+
+            <!-- Minimum Job Fee & Travel Notice Banner -->
+            <div class="travel-notice" id="calloutNotice">
+                💡 Les frais de service minimum sont de 75 $ (incluant Laval et Montréal). Des frais supplémentaires peuvent s'appliquer pour les autres secteurs.
+            </div>
+
+            <form id="bookingForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label id="lblName" for="name">Nom Complet</label>
+                    <input type="text" id="name" required>
                 </div>
-                <div class="badge-item">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Propre</span>
+                <div class="form-group">
+                    <label id="lblEmail" for="email">Adresse Courriel</label>
+                    <input type="email" id="email" required>
                 </div>
-                <div class="badge-item">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Efficace</span>
+                <div class="form-group">
+                    <label id="lblPhone" for="phone">Numéro de Téléphone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label id="lblPostal" for="postalCode">Code Postal</label>
+                    <input type="text" id="postalCode" required class="uppercase">
+                </div>
+                <div class="form-group">
+                    <label id="lblService" for="serviceType">Service Requis</label>
+                    <select id="serviceType">
+                        <option value="Furniture Assembly" id="opt1">Assemblage de Meubles</option>
+                        <option value="Wall Mounting" id="opt4">Installation Murale / Étagères</option>
+                        <option value="General Handyman Services" id="opt3">Maintenance Générale / Travaux sur mesure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="lblDetails" for="details">Notes Supplémentaires (Détails du projet, Adresse Civique)</label>
+                    <textarea id="details" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn" id="submitBtn" style="width: 100%;">Soumettre la Demande</button>
+                <div class="success-msg" id="successMsg">Merci! Votre demande a été reçue. Alex vous contactera sous peu.</div>
+            </form>
+        </div>
+
+        <!-- DIRECT CONTACT & SOCIALS SECTION -->
+        <div class="card" id="contact-section">
+            <h2 id="directContactHeading">Vous préférez communiquer directement ?</h2>
+            <div class="contact-info-grid">
+                <div class="contact-box">
+                    <h3 id="phoneTitle">📞 Téléphone / WhatsApp</h3>
+                    <a href="tel:+15142496089">(514) 249-6089</a>
+                </div>
+                <div class="contact-box">
+                    <h3 id="emailTitle">✉️ Courriel</h3>
+                    <a href="mailto:alex.handyman.montreal@gmail.com">alex.handyman.montreal@gmail.com</a>
+                </div>
+                <div class="contact-box">
+                    <h3 id="socialTitle">🌐 Facebook</h3>
+                    <a href="https://www.facebook.com/profile.php?id=61595332553100" target="_blank" id="fbLinkText">Visiter la page Facebook</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="contact" class="contact-section">
-        <div class="section-header" style="color: #ffffff; margin-bottom: 3rem;">
-            <h3 style="color: #ffffff;">Contactez-moi</h3>
-            <div class="section-divider"></div>
-            <p style="color: #b0c2c0;">Besoin d'un coup de main ? Appelez-moi, écrivez-moi ou visitez ma page Facebook.</p>
-        </div>
-
-        <div class="contact-grid">
-            <!-- Phone / WhatsApp -->
-            <a href="tel:5142496089" class="contact-card">
-                <div class="contact-card-icon">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="contact-card-info">
-                    <span>Téléphone / WhatsApp</span>
-                    <strong>514-249-6089</strong>
-                </div>
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:info@alex-handyman-montreal.com" class="contact-card">
-                <div class="contact-card-icon">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="contact-card-info">
-                    <span>Courriel professionnel</span>
-                    <strong>info@alex-handyman-montreal.com</strong>
-                </div>
-            </a>
-
-            <!-- Facebook Business Page -->
-            <a href="https://www.facebook.com/profile.php?id=61595332553100" target="_blank" rel="noopener noreferrer" class="contact-card">
-                <div class="contact-card-icon" style="background-color: #1877f2;">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <div class="contact-card-info">
-                    <span>Page Facebook</span>
-                    <strong>Alex Handyman Montréal</strong>
-                </div>
-            </a>
-        </div>
-
-        <div class="coverage-note">
-            <p><i class="fa-solid fa-map-location-dot"></i> Zone d'intervention : <strong>Grand Montréal et Laval</strong></p>
-        </div>
-    </section>
+    </div>
 
     <footer>
-        <div class="footer-content">
-            <div>
-                <p>&copy; <span id="current-year"></span> Alex Handyman (Alexey Kryukov). Tous droits réservés.</p>
-            </div>
-            <div class="footer-terms">
-                <span>alex-handyman-montreal.com</span>
-                <span>•</span>
-                <span>Assemblage • Installation • Réparations</span>
-            </div>
-        </div>
+        <p id="footerText">&copy; 2026 Alex Handyman Montreal. Tous droits réservés.<br>Confidentialité assurée : Aucun suivi ni témoin (cookie) utilisé.</p>
     </footer>
 
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('successMsg').style.display = 'block';
+            document.getElementById('bookingForm').reset();
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 5000);
+        }
+
+        let currentLang = 'fr';
+
+        const translations = {
+            en: {
+                devBanner: "🚧 Note: This site is currently in development mode. 🚧",
+                navServices: "Services",
+                navQuote: "Request Quote",
+                navContact: "Contact",
+                navBtnEstimate: "Request Your Quote",
+                heroTitle: "Professional Furniture Assembly & Handyman Services",
+                heroSubtitle: "Serving Montreal & Laval with transparent flat-rate pricing and reliable workmanship.",
+                heroBtn: "Request Your Quote",
+                servicesHeading: "Our Core Services",
+                serv1Title: "Flat-Pack Assembly",
+                serv1Desc: "Expert assembly for IKEA, Wayfair, and custom furniture including wardrobes, dressers, desks, beds, and tables.",
+                serv2Title: "Wall Mounting & Anchoring",
+                serv2Desc: "Secure anti-tip wall anchoring for dressers and bookshelves, floating shelves, mirrors, and artwork.",
+                serv3Title: "General Maintenance",
+                serv3Desc: "Door adjustments, drywall patch, minor carpentry fixes and household troubleshooting.",
+                calloutNotice: "💡 Minimum job fee is $75 (includes travel within Laval and Montreal). For other areas, extra travel fees may apply.",
+                formHeading: "Request a Quote",
+                lblName: "Full Name",
+                lblEmail: "Email Address",
+                lblPhone: "Phone Number",
+                lblPostal: "Postal Code",
+                lblService: "Service Required",
+                opt1: "Furniture Assembly",
+                opt3: "General Maintenance / Custom Work",
+                opt4: "Wall Mounting / Shelving",
+                lblDetails: "Additional Notes (Project Details, Street Address)",
+                submitBtn: "Submit Request",
+                successMsg: "Thank you! Your request has been received. Alex will contact you shortly.",
+                directContactHeading: "Prefer to Reach Out Directly?",
+                phoneTitle: "📞 Phone / WhatsApp",
+                emailTitle: "✉️ Email",
+                socialTitle: "🌐 Facebook",
+                fbLinkText: "Visit Facebook Page",
+                langToggle: "FR / EN",
+                footer: "&copy; 2026 Alex Handyman Montreal. All rights reserved.<br>Privacy protected: No tracking or cookies used."
+            },
+            fr: {
+                devBanner: "🚧 Note : Ce site est actuellement en mode de développement. 🚧",
+                navServices: "Services",
+                navQuote: "Demander Devis",
+                navContact: "Contact",
+                navBtnEstimate: "Demander Votre Devis",
+                heroTitle: "Assemblage de Meubles Professionnel & Services de Réparation",
+                heroSubtitle: "Desservant Montréal & Laval avec des prix fixes transparents et un travail soigné.",
+                heroBtn: "Demander Votre Devis",
+                servicesHeading: "Nos Services Principaux",
+                serv1Title: "Assemblage de Meubles en Boîte",
+                serv1Desc: "Assemblage d'expert pour IKEA, Wayfair et meubles sur mesure incluant gardes-robes, commodes, bureaux, lits et tables.",
+                serv2Title: "Installation Murale & Ancrage",
+                serv2Desc: "Ancrage mural anti-basculement sécuritaire pour commodes et bibliothèques, tablettes, miroirs et cadres.",
+                serv3Title: "Maintenance Générale",
+                serv3Desc: "Ajustement de portes, réparation de plaques de plâtre (drywall), menus travaux de menuiserie et dépannage résidentiel.",
+                calloutNotice: "💡 Les frais de service minimum sont de 75 $ (incluant Laval et Montréal). Des frais supplémentaires peuvent s'appliquer pour les autres secteurs.",
+                formHeading: "Demander un Devis",
+                lblName: "Nom Complet",
+                lblEmail: "Adresse Courriel",
+                lblPhone: "Numéro de Téléphone",
+                lblPostal: "Code Postal",
+                lblService: "Service Requis",
+                opt1: "Assemblage de Meubles",
+                opt3: "Maintenance Générale / Travaux sur mesure",
+                opt4: "Installation Murale / Étagères",
+                lblDetails: "Notes Supplémentaires (Détails du projet, Adresse Civique)",
+                submitBtn: "Soumettre la Demande",
+                successMsg: "Merci! Votre demande a été reçue. Alex vous contactera sous peu.",
+                directContactHeading: "Vous préférez communiquer directement ?",
+                phoneTitle: "📞 Téléphone / WhatsApp",
+                emailTitle: "✉️ Courriel",
+                socialTitle: "🌐 Facebook",
+                fbLinkText: "Visiter la page Facebook",
+                langToggle: "EN / FR",
+                footer: "&copy; 2026 Alex Handyman Montreal. Tous droits réservés.<br>Confidentialité assurée : Aucun suivi ni témoin (cookie) utilisé."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            const t = translations[currentLang];
+
+            document.getElementById('devBanner').innerText = t.devBanner;
+            document.getElementById('navServices').innerText = t.navServices;
+            document.getElementById('navQuote').innerText = t.navQuote;
+            document.getElementById('navContact').innerText = t.navContact;
+            document.getElementById('navBtnEstimate').innerText = t.navBtnEstimate;
+            document.getElementById('heroTitle').innerText = t.heroTitle;
+            document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
+            document.getElementById('heroBtn').innerText = t.heroBtn;
+            document.getElementById('servicesHeading').innerText = t.servicesHeading;
+            document.getElementById('serv1Title').innerText = t.serv1Title;
+            document.getElementById('serv1Desc').innerText = t.serv1Desc;
+            document.getElementById('serv2Title').innerText = t.serv2Title;
+            document.getElementById('serv2Desc').innerText = t.serv2Desc;
+            document.getElementById('serv3Title').innerText = t.serv3Title;
+            document.getElementById('serv3Desc').innerText = t.serv3Desc;
+            document.getElementById('calloutNotice').innerText = t.calloutNotice;
+            document.getElementById('formHeading').innerText = t.formHeading;
+            document.getElementById('lblName').innerText = t.lblName;
+            document.getElementById('lblEmail').innerText = t.lblEmail;
+            document.getElementById('lblPhone').innerText = t.lblPhone;
+            document.getElementById('lblPostal').innerText = t.lblPostal;
+            document.getElementById('lblService').innerText = t.lblService;
+            document.getElementById('opt1').innerText = t.opt1;
+            document.getElementById('opt3').innerText = t.opt3;
+            document.getElementById('opt4').innerText = t.opt4;
+            document.getElementById('lblDetails').innerText = t.lblDetails;
+            document.getElementById('submitBtn').innerText = t.submitBtn;
+            document.getElementById('successMsg').innerText = t.successMsg;
+            document.getElementById('directContactHeading').innerText = t.directContactHeading;
+            document.getElementById('phoneTitle').innerText = t.phoneTitle;
+            document.getElementById('emailTitle').innerText = t.emailTitle;
+            document.getElementById('socialTitle').innerText = t.socialTitle;
+            document.getElementById('fbLinkText').innerText = t.fbLinkText;
+            document.getElementById('langToggle').innerText = t.langToggle;
+            document.getElementById('footerText').innerHTML = t.footer;
+        }
     </script>
 </body>
 </html>
