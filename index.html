@@ -1,295 +1,503 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Handyman Montreal | Assemblage de Meubles & Réparations Générales</title>
-    
-    <!-- FontAwesome for professional icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta
+    content="Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine. Service disponible : Français, English, Русский."
+    name="description" />
+  
+  <!-- Open Graph / Social Sharing Meta Tags -->
+  <meta property="og:title" content="Alexey Kryukov | Assemblage de meubles et fixation murale" />
+  <meta property="og:description" content="Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
 
-    <link rel="stylesheet" href="styles.css">
+  <!-- Local Business Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Alex Handyman Montreal",
+    "url": "https://alex-handyman-montreal.com",
+    "telephone": "+1-514-249-6089",
+    "email": "alex.handyman.montreal@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Laval",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.5883,
+      "longitude": -73.7523
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "17:00",
+      "closes": "21:00"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+
+  <meta content="#20364b" name="theme-color" />
+  <title>Alexey Kryukov | Assemblage de meubles et fixation murale</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-
-    <!-- Temporary Development Banner -->
-    <div class="dev-banner" id="devBanner">
-        🚧 Note : Ce site est actuellement en mode de développement. 🚧
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span data-i18n="t0_0">Laval &amp; Montréal · French, English, and Russian</span>
+      <span data-i18n="t1_1">Evenings and weekends available</span>
     </div>
-
-    <header>
-        <div class="nav-left">
-            <div class="logo-badge">
-                <i class="fa-solid fa-hammer"></i>
-            </div>
-            <div class="logo-text">
-                <span class="logo-title">Alex Handyman</span>
-                <span class="logo-subtitle">Montreal & Laval</span>
-            </div>
+  </div>
+  <header>
+    <nav aria-label="Main navigation" class="container nav">
+      <a aria-label="Alexey Kryukov home" class="brand" href="#home">
+        <span class="brand-mark">AK</span>
+        <span><span class="brand-name">Alexey Kryukov</span><span class="brand-sub" data-i18n="t0_6">Furniture Assembly
+            &amp; Wall Mounting</span></span>
+      </a>
+      <div class="nav-links">
+        <div aria-label="Language selection / Choix de la langue / Выбор языка" class="language-switch">
+          <button aria-pressed="true" class="lang-button" data-lang="fr" type="button">Fr</button>
+          <button aria-pressed="false" class="lang-button" data-lang="en" type="button">En</button>
+          <button aria-pressed="false" class="lang-button" data-lang="ru" type="button">Ру</button>
         </div>
-        <nav class="nav-center">
-            <a href="#services" class="nav-link" id="navServices">Services</a>
-            <a href="#quote-form" class="nav-link" id="navQuote">Demander Devis</a>
-            <a href="#contact-section" class="nav-link" id="navContact">Contact</a>
-        </nav>
-        <div class="nav-right">
-            <button class="lang-switch" id="langToggle" onclick="toggleLanguage()">EN / FR</button>
-            <a href="#quote-form" class="nav-btn" id="navBtnEstimate">Demander Votre Devis</a>
+        <a data-i18n="t0_2" href="#services">Services</a>
+        <a data-i18n="t1_3" href="#about">Why choose me</a>
+        <a data-i18n="t2_4" href="#direct-contacts">Contact</a>
+        <a class="button button-primary" data-i18n="t3_5" href="#contact">Get a quote</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="t0_7">Furniture assembly &amp; wall mounting</div>
+          <h1 data-i18n="t0_8">Furniture assembly.<br /><span>Wall mounting.</span></h1>
+          <p class="hero-copy" data-i18n="t0_9">Need furniture assembled or items mounted on the wall in Laval or
+            Montréal? I offer careful work, upfront pricing, and flexible appointments.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" data-i18n="t0_10" href="#contact">Get a free quote <span
+                aria-hidden="true">→</span></a>
+            <a class="button button-light" data-i18n="t1_11" href="#services">See services</a>
+          </div>
+          <div class="trust-row">
+            <span data-i18n="t0_12">Clear prices</span><span data-i18n="t1_13">Careful work</span><span
+              data-i18n="t2_14">Flexible times</span>
+          </div>
         </div>
-    </header>
-
-    <section class="hero">
-        <h1 id="heroTitle">Assemblage de Meubles Professionnel & Services de Réparation</h1>
-        <p id="heroSubtitle">Desservant Montréal & Laval avec des prix fixes transparents et un travail soigné.</p>
-        <div class="hero-buttons">
-            <a href="#quote-form" class="btn" id="heroBtn"><i class="fa-solid fa-calculator" style="margin-right: 6px;"></i> Demander Votre Devis</a>
-            <a href="tel:+15142496089" class="btn-phone"><i class="fa-solid fa-phone" style="color: #f97316;"></i> (514) 249-6089</a>
+        <div aria-label="Illustration of a tidy room with assembled furniture" class="hero-art" role="img">
+          <div class="room-card">
+            <div class="window"></div>
+            <div class="shelf"></div>
+            <div class="plant"></div>
+            <div class="cabinet"></div>
+          </div>
+          <div class="tool-badge"><span class="tool-icon">🔧</span><span data-i18n="t0_15">Reliable help<br />around
+              your home</span></div>
         </div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="t0_16">What I do</div>
+          <h2 data-i18n="t0_17">Practical home services.</h2>
+          <p data-i18n="t0_18">From flat-pack furniture to wall mounting, I can help with jobs that require time, tools,
+            and care.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div aria-hidden="true" class="service-icon">▦</div>
+            <h3 data-i18n="t0_19">Furniture assembly</h3>
+            <p data-i18n="t0_21">I assemble home and office furniture according to the manufacturer’s instructions.</p>
+            <ul>
+              <li data-i18n="t0_23">IKEA, Structube, Wayfair and other flat-pack items</li>
+              <li data-i18n="t1_24">Beds, desks, dressers, and TV stands</li>
+              <li data-i18n="t2_25">Wardrobes, bookcases, and office furniture</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div aria-hidden="true" class="service-icon">⌂</div>
+            <h3 data-i18n="t1_20">Wall mounting &amp; anchoring</h3>
+            <p data-i18n="t1_22">I mount items using methods suited to your wall type and setup.</p>
+            <ul>
+              <li data-i18n="t3_26">Shelves, mirrors, and curtain rods</li>
+              <li data-i18n="t4_27">TV wall mounts (checked for your specific setup)</li>
+              <li data-i18n="t5_28">Securing furniture to walls for safety</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div aria-hidden="true" class="service-icon">⚙</div>
+            <h3 data-i18n="t0_80">Gym equipment assembly</h3>
+            <p data-i18n="t0_81">I assemble home fitness equipment according to the manufacturer’s instructions.</p>
+            <ul>
+              <li data-i18n="t0_82">Exercise bikes and ellipticals</li>
+              <li data-i18n="t0_83">Treadmills and weight benches</li>
+              <li data-i18n="t0_84">Home gym and strength-training equipment</li>
+            </ul>
+          </article>
+        </div>
+        <p class="lang-note" data-i18n="t0_29">Some installations may be restricted by local regulations or licensing
+          requirements. Please ask about your project.</p>
+      </div>
+    </section>
+    <section class="why" id="about">
+      <div class="container why-grid">
+        <div>
+          <div class="eyebrow" data-i18n="t0_30">Why hire me</div>
+          <h2 data-i18n="t0_31">Personal service from start to finish.</h2>
+          <p data-i18n="t0_32">I’m Alexey, and I provide straightforward furniture assembly and wall-mounting services
+            in Laval and Montréal.</p>
+          <p data-i18n="t1_33">Tell me what you need, send a few photos or a product link, and I’ll confirm whether I
+            can help and provide a price before we book.</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><strong data-i18n="t0_34">Clear details</strong><span data-i18n="t0_38">You’ll know
+              what’s included and the price before work begins.</span></div>
+          <div class="benefit"><strong data-i18n="t1_35">Careful handling</strong><span data-i18n="t1_39">I take care to
+              protect your furniture, floors, walls, and home.</span></div>
+          <div class="benefit"><strong data-i18n="t2_36">Convenient times</strong><span data-i18n="t2_40">Evening and
+              weekend appointments by arrangement.</span></div>
+          <div class="benefit"><strong data-i18n="t3_37">Three languages</strong><span data-i18n="t3_41">Service
+              available in Français, English, Русский.</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="t0_42">How it works</div>
+          <h2 data-i18n="t0_43">Three simple steps.</h2>
+        </div>
+        <div class="process-grid">
+          <div>
+            <div class="step-number">1</div>
+            <h3 data-i18n="t0_44">Send details</h3>
+            <p data-i18n="t0_47">Send the item name or link, a few photos, your location, and your preferred time.</p>
+          </div>
+          <div>
+            <div class="step-number">2</div>
+            <h3 data-i18n="t1_45">Get a price</h3>
+            <p data-i18n="t1_48">I’ll confirm the details, provide a price estimate, and check availability.</p>
+          </div>
+          <div>
+            <div class="step-number">3</div>
+            <h3 data-i18n="t2_46">Get it done</h3>
+            <p data-i18n="t2_49">If you’d like to proceed, we’ll arrange a convenient appointment.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="container">
-
-        <!-- SERVICES OVERVIEW -->
-        <div class="card" id="services">
-            <h2 id="servicesHeading">Nos Services Principaux</h2>
-            <div class="services-list">
-                
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon-box">
-                        <i class="fa-solid fa-couch"></i>
-                    </div>
-                    <h3 id="serv1Title">Assemblage de Meubles en Boîte</h3>
-                    <p id="serv1Desc">Assemblage d'expert pour IKEA, Wayfair et meubles sur mesure incluant gardes-robes, commodes, bureaux, lits et tables.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon-box">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3 id="serv2Title">Installation Murale & Ancrage</h3>
-                    <p id="serv2Desc">Ancrage mural anti-basculement sécuritaire pour commodes et bibliothèques, tablettes, miroirs et cadres.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-icon-box">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <h3 id="serv3Title">Maintenance Générale</h3>
-                    <p id="serv3Desc">Ajustement de portes, réparation de plaques de plâtre (drywall), menus travaux de menuiserie et dépannage résidentiel.</p>
-                </div>
-
-            </div>
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow" data-i18n="t0_57">Let's talk</div>
+          <h2 data-i18n="t0_58">Request a quote.</h2>
+          <p class="contact-intro" data-i18n="t0_59">Share a few project details so I can provide a more accurate
+            estimate. There’s no obligation to book.</p>
+          <ul class="contact-points">
+            <li><span aria-hidden="true">📍</span><span data-i18n="t0_60"><b>Service area</b><br />Laval &amp; Montréal
+                (let me know your neighborhood)</span></li>
+            <li><span aria-hidden="true">🕒</span><span data-i18n="t1_61"><b>Hours</b><br />Evenings and weekends by
+                arrangement</span></li>
+            <li><span aria-hidden="true">🌐</span><span data-i18n="t2_62"><b>Languages</b><br />French, English, and
+                Russian</span></li>
+          </ul>
         </div>
-
-        <!-- BOOKING / CONTACT FORM -->
-        <div class="card" id="quote-form">
-            <h2 id="formHeading">Demander un Devis</h2>
-
-            <!-- Minimum Job Fee & Travel Notice Banner -->
-            <div class="travel-notice" id="calloutNotice">
-                💡 Les frais de service minimum sont de 75 $ (incluant Laval et Montréal). Des frais supplémentaires peuvent s'appliquer pour les autres secteurs.
+        <form id="quote-form">
+          <div class="form-grid">
+            <div class="field"><label data-i18n="t0_63" for="name">Your name *</label><input autocomplete="name"
+                data-i18n-placeholder="attr_name" id="name" name="name" placeholder="Name" required="" /></div>
+            <div class="field"><label data-i18n="t1_64" for="email">Email *</label><input autocomplete="email"
+                data-i18n-placeholder="attr_email" id="email" name="email" placeholder="you@example.com" required=""
+                type="email" /></div>
+            <div class="field"><label data-i18n="t2_65" for="phone">Phone (optional)</label><input autocomplete="tel"
+                data-i18n-placeholder="attr_phone" id="phone" name="phone" placeholder="Phone number" type="tel" />
             </div>
-
-            <form id="bookingForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label id="lblName" for="name">Nom Complet</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label id="lblEmail" for="email">Adresse Courriel</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label id="lblPhone" for="phone">Numéro de Téléphone</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label id="lblPostal" for="postalCode">Code Postal</label>
-                    <input type="text" id="postalCode" required class="uppercase">
-                </div>
-                <div class="form-group">
-                    <label id="lblService" for="serviceType">Service Requis</label>
-                    <select id="serviceType">
-                        <option value="Furniture Assembly" id="opt1">Assemblage de Meubles</option>
-                        <option value="Wall Mounting" id="opt4">Installation Murale / Étagères</option>
-                        <option value="General Handyman Services" id="opt3">Maintenance Générale / Travaux sur mesure</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label id="lblDetails" for="details">Notes Supplémentaires (Détails du projet, Adresse Civique)</label>
-                    <textarea id="details" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn" id="submitBtn" style="width: 100%;">Soumettre la Demande</button>
-                <div class="success-msg" id="successMsg">Merci! Votre demande a été reçue. Alex vous contactera sous peu.</div>
-            </form>
-        </div>
-
-        <!-- DIRECT CONTACT & SOCIALS SECTION -->
-        <div class="card" id="contact-section">
-            <h2 id="directContactHeading">Vous préférez communiquer directement ?</h2>
-            <div class="contact-info-grid">
-                <a href="tel:+15142496089" class="contact-box">
-                    <div class="contact-icon-circle">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <h3 id="phoneTitle">Téléphone / WhatsApp</h3>
-                    <span>(514) 249-6089</span>
-                </a>
-                <a href="mailto:alex.handyman.montreal@gmail.com" class="contact-box">
-                    <div class="contact-icon-circle">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <h3 id="emailTitle">Courriel</h3>
-                    <span>alex.handyman.montreal@gmail.com</span>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61595332553100" target="_blank" class="contact-box">
-                    <div class="contact-icon-circle" style="background-color: #1877f2;">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </div>
-                    <h3 id="socialTitle">Facebook</h3>
-                    <span id="fbLinkText">Voir la page</span>
-                </a>
+            <div class="field"><label data-i18n="t3_66" for="area">City or neighborhood *</label><input
+                data-i18n-placeholder="attr_area" id="area" name="area" placeholder="e.g. Laval, Montreal"
+                required="" /></div>
+            <div class="field full"><label data-i18n="t4_67" for="service">What do you need? *</label>
+              <select id="service" name="service" required="">
+                <option data-i18n="t0_69" value="">Choose a service</option>
+                <option data-i18n="t1_70">Furniture assembly</option>
+                <option data-i18n="t2_71">Wall mounting &amp; anchoring</option>
+                <option data-i18n="t0_85">Gym equipment assembly</option>
+                <option data-i18n="t3_72">Multiple items / Other</option>
+              </select>
             </div>
+            <div class="field full"><label data-i18n="t5_68" for="details">Project details *</label><textarea
+                data-i18n-placeholder="attr_details" id="details" name="details"
+                placeholder="Item names, links, sizes, wall type if known, and preferred dates..."
+                required=""></textarea></div>
+            <div class="field full"><button class="button button-primary" data-i18n="t0_73" type="submit">Send quote
+                request by email →</button>
+              <p class="form-note" data-i18n="t0_74">This opens your email app with the request filled in. The website
+                does not store or send your information.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="direct-contact-section" id="direct-contacts">
+      <div class="container">
+        <div class="section-head" style="text-align: center; margin-inline: auto;">
+          <div class="eyebrow" data-i18n="t0_50">Contact</div>
+          <h2 data-i18n="t0_51">Reach out directly</h2>
+          <p data-i18n="t0_52">Have a question or ready to get started? Call, email, or message me.</p>
         </div>
-
+        <div class="direct-contact-grid">
+          <div class="contact-card">
+            <span aria-hidden="true" class="contact-card-icon">📞</span>
+            <h3 data-i18n="t0_53">Phone / WhatsApp</h3>
+            <p><a href="tel:5142496089">514-249-6089</a></p>
+          </div>
+          <div class="contact-card">
+            <span aria-hidden="true" class="contact-card-icon">✉️</span>
+            <h3 data-i18n="t1_54">Email</h3>
+            <p><a href="mailto:alex.handyman.montreal@gmail.com">alex.handyman.montreal@gmail.com</a></p>
+          </div>
+          <div class="contact-card">
+            <span aria-hidden="true" class="contact-card-icon">📘</span>
+            <h3 data-i18n="t2_55">Facebook</h3>
+            <p><a data-i18n="t0_56" href="https://www.facebook.com/profile.php?id=61595332553100" rel="noopener"
+                target="_blank">Visit Facebook Page →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>Alexey Kryukov</strong>
+        <p data-i18n="t0_75">Furniture Assembly &amp; Wall Mounting · Laval &amp; Montréal</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-links-row">
+          <a data-i18n="t0_76" href="#services">Services</a>
+          <a data-i18n="t1_77" href="#direct-contacts">Contact</a>
+          <a data-i18n="t2_78" href="#contact">Get a quote</a>
+        </div>
+        <div class="footer-links-row">
+          <a data-i18n="t8_0" href="#" id="privacy-link">Privacy policy</a>
+          <a data-i18n="t3_79" href="#home">Back to top ↑</a>
+        </div>
+      </div>
+      <p>© <span id="year"></span> Alexey Kryukov</p>
     </div>
+  </footer>
 
-    <footer>
-        <p id="footerText">&copy; 2026 Alex Handyman Montreal. Tous droits réservés.<br>Confidentialité assurée : Aucun suivi ni témoin (cookie) utilisé.</p>
-    </footer>
+  <!-- Privacy Policy Modal -->
+  <div class="modal-backdrop" id="privacy-modal">
+    <div class="modal-card">
+      <h3 data-i18n="t8_1">Privacy Policy</h3>
+      <p data-i18n="t8_2">This website does not use tracking cookies, analytics pixels, or store your personal data on external servers. Form submissions directly open your personal email client to send a message. Your information remains entirely private.</p>
+      <button class="modal-close" data-i18n="t8_3" id="privacy-close">Close</button>
+    </div>
+  </div>
 
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            document.getElementById('successMsg').style.display = 'block';
-            document.getElementById('bookingForm').reset();
-            setTimeout(() => {
-                document.getElementById('successMsg').style.display = 'none';
-            }, 5000);
-        }
+  <script>
+    const BUSINESS_EMAIL = "alex.handyman.montreal@gmail.com";
+    const translations = {
+      "t0_0": { "fr": "Laval et Montréal · Français, English, Русский", "en": "Laval & Montréal · Français, English, Русский", "ru": "Лаваль и Монреаль · Français, English, Русский" },
+      "t1_1": { "fr": "Soirs et fins de semaine", "en": "Evenings and weekends available", "ru": "Доступен по вечерам и в выходные" },
+      "t0_2": { "fr": "Services", "en": "Services", "ru": "Услуги" },
+      "t1_3": { "fr": "Pourquoi me choisir", "en": "Why choose me", "ru": "Почему я" },
+      "t2_4": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
+      "t3_5": { "fr": "Obtenir un devis", "en": "Get a quote", "ru": "Рассчитать цену" },
+      "t0_6": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture Assembly & Wall Mounting", "ru": "Сборка мебели и крепление на стены" },
+      "t0_7": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture assembly & wall mounting", "ru": "Сборка мебели и крепление на стены" },
+      "t0_8": { "fr": "Assemblage de meubles.<br><span>Fixation murale.</span>", "en": "Furniture assembly.<br><span>Wall mounting.</span>", "ru": "Сборка мебели.<br><span>Монтаж на стены.</span>" },
+      "t0_9": { "fr": "Besoin d’aide pour assembler des meubles ou fixer des objets au mur à Laval ou à Montréal ? Je travaille avec soin, propose des prix clairs à l’avance et offre des rendez-vous flexibles.", "en": "Need furniture assembled or items mounted on the wall in Laval or Montréal? I offer careful work, upfront pricing, and flexible appointments.", "ru": "Нужна помощь со сборкой мебели или навеской предметов на стены в Лавале или Монреале? Аккуратная работа, четкие цены заранее и гибкий график." },
+      "t0_10": { "fr": "Obtenir un devis gratuit <span aria-hidden=\"true\">→</span>", "en": "Get a free quote <span aria-hidden=\"true\">→</span>", "ru": "Бесплатный расчет цены <span aria-hidden=\"true\">→</span>" },
+      "t1_11": { "fr": "Voir les services", "en": "See services", "ru": "Смотреть услуги" },
+      "t0_12": { "fr": "Prix clairs", "en": "Clear prices", "ru": "Честные цены" },
+      "t1_13": { "fr": "Travail soigné", "en": "Careful work", "ru": "Аккуратная работа" },
+      "t2_14": { "fr": "Horaires flexibles", "en": "Flexible times", "ru": "Гибкое время" },
+      "t0_15": { "fr": "Un service fiable<br>pour votre maison", "en": "Reliable help<br>around your home", "ru": "Надежная помощь<br>для вашего дома" },
+      "t0_16": { "fr": "Mes services", "en": "What I do", "ru": "Что я делаю" },
+      "t0_17": { "fr": "Des services pratiques pour la maison.", "en": "Practical home services.", "ru": "Практичные услуги для дома." },
+      "t0_18": { "fr": "Des meubles en kit à la fixation murale, je vous aide avec les travaux qui demandent du temps, des outils et du soin.", "en": "From flat-pack furniture to wall mounting, I can help with jobs that require time, tools, and care.", "ru": "От сборки мебели в коробках до настенного монтажа — помогу с задачами, требующими времени, инструмента и аккуратности." },
+      "t0_19": { "fr": "Assemblage de meubles", "en": "Furniture assembly", "ru": "Сборка мебели" },
+      "t1_20": { "fr": "Fixation murale et ancrage", "en": "Wall mounting & anchoring", "ru": "Настенный монтаж и крепление" },
+      "t0_21": { "fr": "J’assemble les meubles de maison et de bureau en suivant les instructions du fabricant.", "en": "I assemble home and office furniture according to the manufacturer’s instructions.", "ru": "Собираю домашнюю и офисную мебель в строгом соответствии с инструкциями производителя." },
+      "t1_22": { "fr": "Je fixe les objets en utilisant une méthode adaptée au type de mur et à votre installation.", "en": "I mount items using methods suited to your wall type and setup.", "ru": "Надежно закрепляю предметы с учетом типа ваших стен и особенностей крепежа." },
+      "t0_23": { "fr": "Articles en kit IKEA, Structube, Wayfair et autres", "en": "IKEA, Structube, Wayfair and other flat-pack items", "ru": "Мебель из IKEA, Structube, Wayfair и других брендов" },
+      "t1_24": { "fr": "Lits, bureaux, commodes et meubles TV", "en": "Beds, desks, dressers, and TV stands", "ru": "Кровати, столы, комоды и ТВ-тумбы" },
+      "t2_25": { "fr": "Armoires, bibliothèques et meubles de bureau", "en": "Wardrobes, bookcases, and office furniture", "ru": "Шкафы, книжные полки и офисная мебель" },
+      "t3_26": { "fr": "Étagères, miroirs et tringles à rideaux", "en": "Shelves, mirrors, and curtain rods", "ru": "Полки, зеркала и карнизы для штор" },
+      "t4_27": { "fr": "Supports muraux pour téléviseurs (selon votre installation)", "en": "TV wall mounts (checked for your specific setup)", "ru": "Кронштейны для телевизоров (с проверкой вашей стены)" },
+      "t5_28": { "fr": "Fixation des meubles au mur pour plus de sécurité", "en": "Securing furniture to walls for safety", "ru": "Крепление тяжелой мебели к стене для безопасности" },
+      "t0_29": { "fr": "Certaines installations peuvent être soumises à des règles locales ou à des exigences de permis. N’hésitez pas à me parler de votre projet.", "en": "Some installations may be restricted by local regulations or licensing requirements. Please ask about your project.", "ru": "Некоторые виды монтажа могут подпадать под местные правила или требования к лицензированию. Уточняйте детали вашего проекта." },
+      "t0_30": { "fr": "Pourquoi faire appel à moi", "en": "Why hire me", "ru": "Почему выбирают меня" },
+      "t0_31": { "fr": "Un service personnalisé du début à la fin.", "en": "Personal service from start to finish.", "ru": "Персональный подход от начала и до конца." },
+      "t0_32": { "fr": "Je m’appelle Alexey et je propose des services simples et fiables d’assemblage de meubles et de fixation murale à Laval et à Montréal.", "en": "I’m Alexey, and I provide straightforward furniture assembly and wall-mounting services in Laval and Montréal.", "ru": "Меня зовут Алексей. Я предлагаю надежные и понятные услуги по сборке мебели и настенному монтажу в Лавале и Монреале." },
+      "t1_33": { "fr": "Expliquez-moi ce qu’il faut faire et envoyez quelques photos ou un lien du produit. Je vous confirmerai si je peux vous aider et vous donnerai un prix avant de réserver.", "en": "Tell me what you need, send a few photos or a product link, and I’ll confirm whether I can help and provide a price before we book.", "ru": "Расскажите, что нужно сделать, отправьте несколько фото или ссылку на товар, и я подтвержу возможность выполнения заказа и назову цену до начала работ." },
+      "t0_34": { "fr": "Prix transparents", "en": "Clear details", "ru": "Прозрачные условия" },
+      "t1_35": { "fr": "Travail soigné", "en": "Careful handling", "ru": "Бережное обращение" },
+      "t2_36": { "fr": "Horaires pratiques", "en": "Convenient times", "ru": "Удобное время" },
+      "t3_37": { "fr": "Trois langues", "en": "Three languages", "ru": "Три языка" },
+      "t0_38": { "fr": "Vous saurez ce qui est inclus et le prix avant le début du travail.", "en": "You’ll know what’s included and the price before work begins.", "ru": "Вы заранее будете знать стоимость и то, что входит в работу." },
+      "t1_39": { "fr": "Je prends soin de vos meubles, de vos planchers, de vos murs et de votre domicile.", "en": "I take care to protect your furniture, floors, walls, and home.", "ru": "Я аккуратно обращусь с вашей мебелью, полами, стенами и имуществом." },
+      "t2_40": { "fr": "Rendez-vous en soirée et la fin de semaine, sur entente.", "en": "Evening and weekend appointments by arrangement.", "ru": "Встречи по вечерам и в выходные дни по предварительной договоренности." },
+      "t3_41": { "fr": "Service disponible : Français, English, Русский.", "en": "Languages: Français, English, Русский.", "ru": "Обслуживание на французском, английском и русском языках." },
+      "t0_42": { "fr": "Comment ça fonctionne", "en": "How it works", "ru": "Как это работает" },
+      "t0_43": { "fr": "Trois étapes simples.", "en": "Three simple steps.", "ru": "Три простых шага." },
+      "t0_44": { "fr": "Envoyez les détails", "en": "Send details", "ru": "Отправьте детали" },
+      "t1_45": { "fr": "Obtenez un prix", "en": "Get a price", "ru": "Узнайте цену" },
+      "t2_46": { "fr": "C’est réglé", "en": "Get it done", "ru": "Готово" },
+      "t0_47": { "fr": "Envoyez le nom ou le lien du produit, quelques photos, votre secteur et vos disponibilités.", "en": "Send the item name or link, a few photos, your location, and your preferred time.", "ru": "Пришлите название или ссылку на товар, фото, ваш район и желаемое время." },
+      "t1_48": { "fr": "Je confirmerai les détails, vous donnerai une estimation et vérifierai mes disponibilités.", "en": "I’ll confirm the details, provide a price estimate, and check availability.", "ru": "Я уточню детали, назову предварительную стоимость и проверю свободное время." },
+      "t2_49": { "fr": "Si le prix vous convient, nous conviendrons d’un rendez-vous.", "en": "If you’d like to proceed, we’ll arrange a convenient appointment.", "ru": "Если вас всё устроит, мы согласуем удобное время визита." },
+      "t0_50": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
+      "t0_51": { "fr": "Contactez-moi directement", "en": "Reach out directly", "ru": "Связаться напрямую" },
+      "t0_52": { "fr": "Une question ou prêt à commencer ? Appelez-moi, écrivez-moi ou envoyez-moi un message.", "en": "Have a question or ready to get started? Call, email, or message me.", "ru": "Есть вопросы или готовы начать? Позвоните, напишите на почту или в соцсети." },
+      "t0_53": { "fr": "Téléphone / WhatsApp", "en": "Phone / WhatsApp", "ru": "Телефон / WhatsApp" },
+      "t1_54": { "fr": "Courriel", "en": "Email", "ru": "Эл. почта" },
+      "t2_55": { "fr": "Facebook", "en": "Facebook", "ru": "Фейсбук" },
+      "t0_56": { "fr": "Visiter ma page Facebook →", "en": "Visit Facebook Page →", "ru": "Страница в Facebook →" },
+      "t0_57": { "fr": "Parlons de votre projet", "en": "Let’s talk", "ru": "Обсудим ваш проект" },
+      "t0_58": { "fr": "Demander un devis.", "en": "Request a quote.", "ru": "Запрос оценки." },
+      "t0_59": { "fr": "Décrivez brièvement votre projet pour m’aider à préparer une estimation précise. Vous n’êtes pas obligé de réserver.", "en": "Share a few project details so I can provide a more accurate estimate. There’s no obligation to book.", "ru": "Опишите проект, чтобы я подготовил точную оценку. Это вас ни к чему не обязывает." },
+      "t0_60": { "fr": "<b>Secteur desservi</b><br>Laval et Montréal (indiquez votre quartier)", "en": "<b>Service area</b><br>Laval & Montréal (let me know your neighborhood)", "ru": "<b>Зона обслуживания</b><br>Лаваль и Монреаль (укажите ваш район)" },
+      "t1_61": { "fr": "<b>Disponibilités</b><br>Soirs et fins de semaine, sur entente", "en": "<b>Hours</b><br>Evenings and weekends by arrangement", "ru": "<b>Часы работы</b><br>Вечера и выходные по договоренности" },
+      "t2_62": { "fr": "<b>Langues</b><br>Français, English, Русский", "en": "<b>Languages</b><br>French, English, and Russian", "ru": "<b>Языки</b><br>Французский, английский, русский" },
+      "t0_63": { "fr": "Votre nom *", "en": "Your name *", "ru": "Ваше имя *" },
+      "t1_64": { "fr": "Courriel *", "en": "Email *", "ru": "Эл. почта *" },
+      "t2_65": { "fr": "Téléphone (facultatif)", "en": "Phone (optional)", "ru": "Телефон (необязательно)" },
+      "t3_66": { "fr": "Ville ou quartier *", "en": "City or neighborhood *", "ru": "Город или район *" },
+      "t4_67": { "fr": "De quoi avez-vous besoin ? *", "en": "What do you need? *", "ru": "Что вам требуется? *" },
+      "t5_68": { "fr": "Détails du projet *", "en": "Project details *", "ru": "Детали проекта *" },
+      "t0_69": { "fr": "Choisir un service", "en": "Choose a service", "ru": "Выберите услугу" },
+      "t1_70": { "fr": "Assemblage de meubles", "en": "Furniture assembly", "ru": "Сборка мебели" },
+      "t2_71": { "fr": "Fixation murale et ancrage", "en": "Wall mounting & anchoring", "ru": "Настенный монтаж и крепление" },
+      "t3_72": { "fr": "Plusieurs articles / Autre", "en": "Multiple items / Other", "ru": "Несколько предметов / Другое" },
+      "t0_73": { "fr": "Envoyer la demande par courriel →", "en": "Send quote request by email →", "ru": "Отправить запрос по почте →" },
+      "t0_74": { "fr": "Ce bouton ouvre votre application de courriel avec le message prérempli. Le site ne stocke ni n’envoie vos renseignements.", "en": "This opens your email app with the request filled in. The website does not store or send your information.", "ru": "Кнопка откроет почтовое приложение с готовым письмом. Сайт не собирает и не хранит ваши данные." },
+      "t0_75": { "fr": "Assemblage de meubles et fixation murale · Laval et Montréal", "en": "Furniture Assembly & Wall Mounting · Laval & Montréal", "ru": "Сборка мебели и монтаж на стены · Лаваль и Монреаль" },
+      "t0_76": { "fr": "Services", "en": "Services", "ru": "Услуги" },
+      "t1_77": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
+      "t2_78": { "fr": "Obtenir un devis", "en": "Get a quote", "ru": "Рассчитать цену" },
+      "t3_79": { "fr": "Retour en haut ↑", "en": "Back to top ↑", "ru": "Наверх ↑" },
+      "t0_80": { "fr": "Assemblage d’équipements de gym", "en": "Gym equipment assembly", "ru": "Сборка спортивного инвентаря" },
+      "t0_81": { "fr": "J’assemble les équipements de mise en forme à domicile en suivant les instructions du fabricant.", "en": "I assemble home fitness equipment according to the manufacturer’s instructions.", "ru": "Собираю домашние тренажеры и спортивное оборудование по инструкции производителя." },
+      "t0_82": { "fr": "Vélos stationnaires et vélos elliptiques", "en": "Exercise bikes and ellipticals", "ru": "Велотренажеры и эллиптические тренажеры" },
+      "t0_83": { "fr": "Tapis roulants et bancs de musculation", "en": "Treadmills and weight benches", "ru": "Беговые дорожки и силовые скамьи" },
+      "t0_84": { "fr": "Appareils de gym et équipements de musculation à domicile", "en": "Home gym and strength-training equipment", "ru": "Домашние спорткомплексы и силовые тренажеры" },
+      "t0_85": { "fr": "Assemblage d’équipements de gym", "en": "Gym equipment assembly", "ru": "Сборка спортивного инвентаря" },
+      "attr_name": { "fr": "Nom", "en": "Name", "ru": "Имя" },
+      "attr_email": { "fr": "vous@exemple.com", "en": "you@example.com", "ru": "you@example.com" },
+      "attr_phone": { "fr": "Numéro de téléphone", "en": "Phone number", "ru": "Номер телефона" },
+      "attr_area": { "fr": "ex. Laval, Montréal", "en": "e.g. Laval, Montreal", "ru": "напр. Лаваль, Монреаль" },
+      "attr_details": { "fr": "Noms des articles, liens, dimensions, type de mur si connu et dates souhaitées…", "en": "Item names, links, sizes, wall type if known, and preferred dates...", "ru": "Названия предметов, ссылки, размеры, тип стен (если известен) и желаемые даты..." },
+      "t8_0": { "fr": "Politique de confidentialité", "en": "Privacy policy", "ru": "Конфиденциальность" },
+      "t8_1": { "fr": "Politique de confidentialité", "en": "Privacy Policy", "ru": "Политика конфиденциальности" },
+      "t8_2": { "fr": "Ce site Web n'utilise pas de témoins (cookies) de suivi, de pixels d'analyse et ne stocke pas vos renseignements personnels sur des serveurs. Le formulaire ouvre directement votre application de messagerie. Vos données restent entièrement privées.", "en": "This website does not use tracking cookies, analytics pixels, or store your personal data on servers. Submitting the form directly opens your personal email client. Your information remains entirely private.", "ru": "Этот сайт не использует файлы cookie для отслеживания, аналитические пиксели и не хранит ваши личные данные на серверах. Отправка формы напрямую открывает вашу почтовую программу. Ваши данные остаются конфиденциальными." },
+      "t8_3": { "fr": "Fermer", "en": "Close", "ru": "Закрыть" }
+    };
+    
+    let currentLanguage = "fr";
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+      document.title = language === "fr"
+        ? "Alexey Kryukov | Assemblage de meubles et fixation murale"
+        : language === "ru"
+          ? "Алексей Крюков | Сборка мебели и монтаж на стены"
+          : "Alexey Kryukov | Furniture Assembly & Wall Mounting";
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const item = translations[element.dataset.i18n];
+        if (item) element.innerHTML = item[language] || item["en"];
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const item = translations[element.dataset.i18nPlaceholder];
+        if (item) element.placeholder = item[language] || item["en"];
+      });
+      document.querySelectorAll(".lang-button").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+      });
+      const description = document.querySelector('meta[name="description"]');
+      description.content = language === "fr"
+        ? "Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine. Service disponible : Français, English, Русский."
+        : language === "ru"
+          ? "Услуги по сборке мебели и настенному монтажу в Лавале и Монреале. Вечера и выходные. Обслуживание на французском, английском и русском языках."
+          : "Furniture assembly and wall-mounting services in Laval and Montréal. Evenings and weekends. Service in Français, English, Русский.";
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll(".lang-button").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+    setLanguage("fr");
 
-        let currentLang = 'fr';
+    // Modal behavior for Privacy Policy
+    const modal = document.getElementById("privacy-modal");
+    document.getElementById("privacy-link").addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("active");
+    });
+    document.getElementById("privacy-close").addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("active");
+    });
 
-        const translations = {
-            en: {
-                devBanner: "🚧 Note: This site is currently in development mode. 🚧",
-                navServices: "Services",
-                navQuote: "Request Quote",
-                navContact: "Contact",
-                navBtnEstimate: "Request Your Quote",
-                heroTitle: "Professional Furniture Assembly & Handyman Services",
-                heroSubtitle: "Serving Montreal & Laval with transparent flat-rate pricing and reliable workmanship.",
-                heroBtn: "Request Your Quote",
-                servicesHeading: "Our Core Services",
-                serv1Title: "Flat-Pack Assembly",
-                serv1Desc: "Expert assembly for IKEA, Wayfair, and custom furniture including wardrobes, dressers, desks, beds, and tables.",
-                serv2Title: "Wall Mounting & Anchoring",
-                serv2Desc: "Secure anti-tip wall anchoring for dressers and bookshelves, floating shelves, mirrors, and artwork.",
-                serv3Title: "General Maintenance",
-                serv3Desc: "Door adjustments, drywall patch, minor carpentry fixes and household troubleshooting.",
-                calloutNotice: "💡 Minimum job fee is $75 (includes travel within Laval and Montreal). For other areas, extra travel fees may apply.",
-                formHeading: "Request a Quote",
-                lblName: "Full Name",
-                lblEmail: "Email Address",
-                lblPhone: "Phone Number",
-                lblPostal: "Postal Code",
-                lblService: "Service Required",
-                opt1: "Furniture Assembly",
-                opt3: "General Maintenance / Custom Work",
-                opt4: "Wall Mounting / Shelving",
-                lblDetails: "Additional Notes (Project Details, Street Address)",
-                submitBtn: "Submit Request",
-                successMsg: "Thank you! Your request has been received. Alex will contact you shortly.",
-                directContactHeading: "Prefer to Reach Out Directly?",
-                phoneTitle: "Phone / WhatsApp",
-                emailTitle: "Email",
-                socialTitle: "Facebook",
-                fbLinkText: "View Page",
-                langToggle: "FR / EN",
-                footer: "&copy; 2026 Alex Handyman Montreal. All rights reserved.<br>Privacy protected: No tracking or cookies used."
-            },
-            fr: {
-                devBanner: "🚧 Note : Ce site est actuellement en mode de développement. 🚧",
-                navServices: "Services",
-                navQuote: "Demander Devis",
-                navContact: "Contact",
-                navBtnEstimate: "Demander Votre Devis",
-                heroTitle: "Assemblage de Meubles Professionnel & Services de Réparation",
-                heroSubtitle: "Desservant Montréal & Laval avec des prix fixes transparents et un travail soigné.",
-                heroBtn: "Demander Votre Devis",
-                servicesHeading: "Nos Services Principaux",
-                serv1Title: "Assemblage de Meubles en Boîte",
-                serv1Desc: "Assemblage d'expert pour IKEA, Wayfair et meubles sur mesure incluant gardes-robes, commodes, bureaux, lits et tables.",
-                serv2Title: "Installation Murale & Ancrage",
-                serv2Desc: "Ancrage mural anti-basculement sécuritaire pour commodes et bibliothèques, tablettes, miroirs et cadres.",
-                serv3Title: "Maintenance Générale",
-                serv3Desc: "Ajustement de portes, réparation de plaques de plâtre (drywall), menus travaux de menuiserie et dépannage résidentiel.",
-                calloutNotice: "💡 Les frais de service minimum sont de 75 $ (incluant Laval et Montréal). Des frais supplémentaires peuvent s'appliquer pour les autres secteurs.",
-                formHeading: "Demander un Devis",
-                lblName: "Nom Complet",
-                lblEmail: "Adresse Courriel",
-                lblPhone: "Numéro de Téléphone",
-                lblPostal: "Code Postal",
-                lblService: "Service Requis",
-                opt1: "Assemblage de Meubles",
-                opt3: "Maintenance Générale / Travaux sur mesure",
-                opt4: "Installation Murale / Étagères",
-                lblDetails: "Notes Supplémentaires (Détails du projet, Adresse Civique)",
-                submitBtn: "Soumettre la Demande",
-                successMsg: "Merci! Votre demande a été reçue. Alex vous contactera sous peu.",
-                directContactHeading: "Vous préférez communiquer directement ?",
-                phoneTitle: "Téléphone / WhatsApp",
-                emailTitle: "Courriel",
-                socialTitle: "Facebook",
-                fbLinkText: "Voir la page",
-                langToggle: "EN / FR",
-                footer: "&copy; 2026 Alex Handyman Montreal. Tous droits réservés.<br>Confidentialité assurée : Aucun suivi ni témoin (cookie) utilisé."
-            }
-        };
+    document.getElementById("quote-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(
+        currentLanguage === "fr" ? "Demande de devis - assemblage de meubles, fixation murale ou équipements de gym" :
+        currentLanguage === "ru" ? "Запрос расчета цены - сборка мебели, монтаж на стены или тренажеры" :
+        "Furniture assembly, wall mounting, or gym equipment quote request"
+      );
+      const labels = 
+        currentLanguage === "fr" ? ["Nom", "Courriel", "Téléphone", "Secteur", "Service", "Détails du projet"] :
+        currentLanguage === "ru" ? ["Имя", "Эл. почта", "Телефон", "Район", "Услуга", "Детали проекта"] :
+        ["Name", "Email", "Phone", "Area", "Service", "Project details"];
+      
+      const serviceValue = data.get("service");
+      const serviceMap = {
+        "Furniture assembly": "Assemblage de meubles",
+        "Wall mounting & anchoring": "Fixation murale et ancrage",
+        "Gym equipment assembly": "Assemblage d’équipements de gym",
+        "Multiple items / Other": "Plusieurs articles / Autre",
+        "Assemblage de meubles": "Assemblage de meubles",
+        "Fixation murale et ancrage": "Fixation murale et ancrage",
+        "Assemblage d’équipements de gym": "Assemblage d’équipements de gym",
+        "Plusieurs articles / Autre": "Plusieurs articles / Autre",
+        "Сборка мебели": "Assemblage de meubles",
+        "Настенный монтаж и крепление": "Fixation murale et ancrage",
+        "Сборка спортивного инвентаря": "Assemblage d’équipements de gym",
+        "Несколько предметов / Другое": "Plusieurs articles / Autre"
+      };
+      
+      const mappedService = serviceMap[serviceValue] || serviceValue;
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'fr' : 'en';
-            const t = translations[currentLang];
-
-            document.getElementById('devBanner').innerText = t.devBanner;
-            document.getElementById('navServices').innerText = t.navServices;
-            document.getElementById('navQuote').innerText = t.navQuote;
-            document.getElementById('navContact').innerText = t.navContact;
-            document.getElementById('navBtnEstimate').innerText = t.navBtnEstimate;
-            document.getElementById('heroTitle').innerText = t.heroTitle;
-            document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
-            document.getElementById('heroBtn').innerHTML = `<i class="fa-solid fa-calculator" style="margin-right: 6px;"></i> ${t.heroBtn}`;
-            document.getElementById('servicesHeading').innerText = t.servicesHeading;
-            document.getElementById('serv1Title').innerText = t.serv1Title;
-            document.getElementById('serv1Desc').innerText = t.serv1Desc;
-            document.getElementById('serv2Title').innerText = t.serv2Title;
-            document.getElementById('serv2Desc').innerText = t.serv2Desc;
-            document.getElementById('serv3Title').innerText = t.serv3Title;
-            document.getElementById('serv3Desc').innerText = t.serv3Desc;
-            document.getElementById('calloutNotice').innerText = t.calloutNotice;
-            document.getElementById('formHeading').innerText = t.formHeading;
-            document.getElementById('lblName').innerText = t.lblName;
-            document.getElementById('lblEmail').innerText = t.lblEmail;
-            document.getElementById('lblPhone').innerText = t.lblPhone;
-            document.getElementById('lblPostal').innerText = t.lblPostal;
-            document.getElementById('lblService').innerText = t.lblService;
-            document.getElementById('opt1').innerText = t.opt1;
-            document.getElementById('opt3').innerText = t.opt3;
-            document.getElementById('opt4').innerText = t.opt4;
-            document.getElementById('lblDetails').innerText = t.lblDetails;
-            document.getElementById('submitBtn').innerText = t.submitBtn;
-            document.getElementById('successMsg').innerText = t.successMsg;
-            document.getElementById('directContactHeading').innerText = t.directContactHeading;
-            document.getElementById('phoneTitle').innerText = t.phoneTitle;
-            document.getElementById('emailTitle').innerText = t.emailTitle;
-            document.getElementById('socialTitle').innerText = t.socialTitle;
-            document.getElementById('fbLinkText').innerText = t.fbLinkText;
-            document.getElementById('langToggle').innerText = t.langToggle;
-            document.getElementById('footerText').innerHTML = t.footer;
-        }
-    </script>
+      const body = encodeURIComponent(
+        labels[0] + ": " + data.get("name") + "\n" +
+        labels[1] + ": " + data.get("email") + "\n" +
+        labels[2] + ": " + (data.get("phone") || (currentLanguage === "fr" ? "Non fourni" : currentLanguage === "ru" ? "Не указан" : "Not provided")) + "\n" +
+        labels[3] + ": " + data.get("area") + "\n" +
+        labels[4] + ": " + mappedService + "\n\n" +
+        labels[5] + ":\n" + data.get("details")
+      );
+      window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
 </body>
+
 </html>
