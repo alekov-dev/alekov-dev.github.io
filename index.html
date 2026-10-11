@@ -7,10 +7,11 @@
   <meta
     content="Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine. Service disponible : Français, English, Русский."
     name="description" />
-  
+
   <!-- Open Graph / Social Sharing Meta Tags -->
   <meta property="og:title" content="Alexey Kryukov | Assemblage de meubles et fixation murale" />
-  <meta property="og:description" content="Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine." />
+  <meta property="og:description"
+    content="Services d’assemblage de meubles et de fixation murale à Laval et Montréal. Soirs et fins de semaine." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_CA" />
   <meta property="og:locale:alternate" content="en_US" />
@@ -41,7 +42,7 @@
       "dayOfWeek": [
         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
       ],
-      "opens": "17:00",
+      "opens": "08:00",
       "closes": "21:00"
     },
     "priceRange": "$$"
@@ -50,32 +51,975 @@
 
   <meta content="#20364b" name="theme-color" />
   <title>Alexey Kryukov | Assemblage de meubles et fixation murale</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --navy: #20364b;
+      --navy-deep: #142536;
+      --blue: #dceaf3;
+      --cream: #f7f5f0;
+      --paper: #ffffff;
+      --ink: #182633;
+      --muted: #607080;
+      --line: #dce2e6;
+      --accent: #d4a45d;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(20, 37, 54, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      background: var(--navy-deep);
+      color: #fff;
+      font-size: .9rem;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 9px 24px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .topbar a {
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 226, 230, .8);
+      width: 100%;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 100%;
+      padding-inline: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 13px;
+      color: white;
+      background: var(--navy);
+      font-size: 1.4rem;
+    }
+
+    .brand-name {
+      display: block;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-size: .76rem;
+      margin-top: 4px;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .nav-center a {
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 650;
+    }
+
+    .nav-center a:hover {
+      color: #54758f;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-self: end;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font: inherit;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--navy-deep);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero {
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: center;
+      gap: clamp(32px, 5vw, 70px);
+      padding-top: 76px;
+      padding-bottom: 76px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #526b7f;
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 18px 0;
+      color: var(--navy-deep);
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
+      letter-spacing: -.06em;
+      line-height: 1.03;
+      max-width: 700px;
+    }
+
+    h1 span {
+      color: #577b96;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      color: #536474;
+      font-size: 1.12rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 23px;
+      margin-top: 27px;
+      color: #43586a;
+      font-size: .9rem;
+    }
+
+    .trust-row span:before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: #e0e9e6;
+      color: #27604b;
+      font-weight: 900;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 440px;
+      display: grid;
+      place-items: center;
+      width: 100%;
+    }
+
+    .hero-art:before {
+      content: "";
+      position: absolute;
+      width: 85%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #e7e1d6;
+    }
+
+    .room-card {
+      position: relative;
+      width: min(100%, 450px);
+      min-height: 360px;
+      border: 10px solid white;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #e9f0f3 0 58%, #c8b7a2 58% 61%, #eee6db 61%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .window {
+      position: absolute;
+      top: 28px;
+      left: 32px;
+      width: 34%;
+      height: 43%;
+      background: linear-gradient(90deg, transparent 48%, #fff 48% 52%, transparent 52%), linear-gradient(0deg, transparent 48%, #fff 48% 52%, transparent 52%), #b7d0df;
+      border: 7px solid white;
+      box-shadow: 0 5px 15px #a0b2bd55;
+    }
+
+    .plant {
+      position: absolute;
+      bottom: 93px;
+      left: 25px;
+      width: 58px;
+      height: 110px;
+    }
+
+    .plant:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: 30px;
+      height: 42px;
+      background: #b7774f;
+      border-radius: 4px 4px 12px 12px;
+    }
+
+    .plant:after {
+      content: " ";
+      position: absolute;
+      left: 3px;
+      top: 0;
+      width: 53px;
+      height: 76px;
+      background: #64836f;
+      clip-path: polygon(48% 0, 61% 33%, 100% 13%, 77% 49%, 96% 72%, 57% 61%, 48% 100%, 37% 60%, 0 74%, 24% 44%, 5% 18%, 40% 34%);
+    }
+
+    .shelf {
+      position: absolute;
+      right: 28px;
+      top: 45px;
+      width: 40%;
+      height: 9px;
+      background: #9b7656;
+      box-shadow: 0 65px #9b7656;
+    }
+
+    .shelf:before {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: -32px;
+      width: 34px;
+      height: 32px;
+      background: #d5a36d;
+      border-radius: 4px 4px 0 0;
+      box-shadow: 60px 10px 0 #e0d4c2;
+    }
+
+    .cabinet {
+      position: absolute;
+      bottom: 38px;
+      left: 22%;
+      width: 58%;
+      height: 105px;
+      background: #c7a783;
+      border: 5px solid #b08c68;
+      border-radius: 4px;
+      box-shadow: 0 13px 0 #9f8061;
+    }
+
+    .cabinet:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      border-left: 4px solid #b08c68;
+    }
+
+    .cabinet:after {
+      content: "";
+      position: absolute;
+      left: 23%;
+      top: 48%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7b614a;
+      box-shadow: 130px 0 #7b614a;
+    }
+
+    .tool-badge {
+      position: absolute;
+      right: 0;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      max-width: 255px;
+      padding: 15px 18px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      font-weight: 750;
+      line-height: 1.3;
+    }
+
+    .tool-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #e7eef3;
+      font-size: 1.25rem;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      max-width: 660px;
+      margin-bottom: 35px;
+    }
+
+    .section-head h2 {
+      margin: 12px 0;
+      color: var(--navy-deep);
+      font-size: clamp(2rem, 3.3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .service-card {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--blue);
+      color: var(--navy);
+      font-size: 1.4rem;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.3rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .service-card ul {
+      padding-left: 19px;
+      margin-bottom: 0;
+      color: #435363;
+      font-size: .96rem;
+    }
+
+    .service-card li+li {
+      margin-top: 6px;
+    }
+
+    .why {
+      background: var(--navy);
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: start;
+      gap: 70px;
+    }
+
+    .why h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      margin: 13px 0 18px;
+    }
+
+    .why p {
+      color: #d1dce4;
+    }
+
+    .why .eyebrow {
+      color: #d9e4ec;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .benefit {
+      border-top: 1px solid #ffffff35;
+      padding-top: 17px;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+    }
+
+    .benefit span {
+      color: #d1dce4;
+      font-size: .95rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--navy);
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    .process-grid h3 {
+      margin-bottom: 8px;
+    }
+
+    .process-grid p {
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      letter-spacing: -.045em;
+      line-height: 1.12;
+    }
+
+    .contact-intro {
+      color: var(--muted);
+    }
+
+    .contact-points {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0 0;
+    }
+
+    .contact-points li {
+      display: flex;
+      gap: 11px;
+      margin: 12px 0;
+      align-items: flex-start;
+    }
+
+    .contact-points b {
+      color: var(--navy);
+    }
+
+    .direct-contact-section {
+      background: #ffffff;
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .direct-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .contact-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--navy-deep);
+    }
+
+    .contact-card p,
+    .contact-card a {
+      font-size: 1rem;
+      color: var(--muted);
+      text-decoration: none;
+      word-break: break-word;
+      font-weight: 600;
+    }
+
+    .contact-card a:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    form {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 27px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px #1425360a;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: .88rem;
+      font-weight: 750;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #cbd5dc;
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid #dceaf3;
+      border-color: #6f91aa;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 125px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: .82rem;
+      margin: 12px 0 0;
+    }
+
+    footer {
+      background: var(--navy-deep);
+      color: white;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      color: #c8d4de;
+      font-size: .9rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .lang-note {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* Modal styles for Privacy Policy */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 37, 54, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      place-items: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: grid;
+    }
+
+    .modal-card {
+      background: white;
+      color: var(--ink);
+      width: min(500px, 100%);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .modal-card h3 {
+      margin-bottom: 15px;
+      color: var(--navy-deep);
+    }
+
+    .modal-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .modal-close {
+      background: var(--navy);
+      color: white;
+      border: 0;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        padding: 14px 20px;
+        gap: 14px;
+      }
+
+      .nav-center {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        gap: 20px;
+        order: 3;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+      }
+
+      .nav-right {
+        order: 2;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .contact-grid,
+      .direct-contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 35px;
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+        font-size: .82rem;
+      }
+
+      .nav {
+        min-height: 68px;
+        padding-inline: 14px;
+      }
+
+      .brand-sub {
+        max-width: 180px;
+        font-size: .68rem;
+      }
+
+      .nav-center a:not(.button) {
+        font-size: .88rem;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .hero-art {
+        min-height: 310px;
+      }
+
+      .room-card {
+        min-height: 270px;
+        border-width: 7px;
+        width: 100%;
+      }
+
+      .tool-badge {
+        right: 0;
+        bottom: 0;
+        font-size: .8rem;
+        padding: 10px 14px;
+      }
+
+      .benefits,
+      .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .service-card {
+        padding: 22px;
+      }
+
+      form {
+        padding: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .language-switch {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
+    .lang-button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 7px 9px;
+      font: inherit;
+      font-size: .82rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .lang-button[aria-pressed="true"] {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    @media (max-width:560px) {
+      .lang-button {
+        padding: 6px 7px;
+        font-size: .78rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="topbar">
-    <div class="container topbar-inner">
-      <span data-i18n="t0_0">Laval &amp; Montréal · French, English, and Russian</span>
+    <div class="topbar-inner">
+      <span data-i18n="t0_0">Laval &amp; Montréal · Français, English, Русский</span>
       <span data-i18n="t1_1">Evenings and weekends available</span>
     </div>
   </div>
   <header>
-    <nav aria-label="Main navigation" class="container nav">
+    <nav aria-label="Main navigation" class="nav">
       <a aria-label="Alexey Kryukov home" class="brand" href="#home">
-        <span class="brand-mark">AK</span>
+        <span class="brand-mark">🔧</span>
         <span><span class="brand-name">Alexey Kryukov</span><span class="brand-sub" data-i18n="t0_6">Furniture Assembly
             &amp; Wall Mounting</span></span>
       </a>
-      <div class="nav-links">
+      <div class="nav-center">
+        <a data-i18n="t0_2" href="#services">Services</a>
+        <a data-i18n="t1_3" href="#about">Why choose me</a>
+        <a data-i18n="t2_4" href="#direct-contacts">Contact</a>
+      </div>
+      <div class="nav-right">
         <div aria-label="Language selection / Choix de la langue / Выбор языка" class="language-switch">
           <button aria-pressed="true" class="lang-button" data-lang="fr" type="button">Fr</button>
           <button aria-pressed="false" class="lang-button" data-lang="en" type="button">En</button>
           <button aria-pressed="false" class="lang-button" data-lang="ru" type="button">Ру</button>
         </div>
-        <a data-i18n="t0_2" href="#services">Services</a>
-        <a data-i18n="t1_3" href="#about">Why choose me</a>
-        <a data-i18n="t2_4" href="#direct-contacts">Contact</a>
         <a class="button button-primary" data-i18n="t3_5" href="#contact">Get a quote</a>
       </div>
     </nav>
@@ -89,9 +1033,9 @@
           <p class="hero-copy" data-i18n="t0_9">Need furniture assembled or items mounted on the wall in Laval or
             Montréal? I offer careful work, upfront pricing, and flexible appointments.</p>
           <div class="hero-actions">
-            <a class="button button-primary" data-i18n="t0_10" href="#contact">Get a free quote <span
-                aria-hidden="true">→</span></a>
+            <a class="button button-primary" data-i18n="t0_10" href="#contact">Get a quote</a>
             <a class="button button-light" data-i18n="t1_11" href="#services">See services</a>
+            <a class="button button-light" data-i18n="t2_86" href="#direct-contacts">Contact me</a>
           </div>
           <div class="trust-row">
             <span data-i18n="t0_12">Clear prices</span><span data-i18n="t1_13">Careful work</span><span
@@ -225,12 +1169,11 @@
             <div class="field"><label data-i18n="t1_64" for="email">Email *</label><input autocomplete="email"
                 data-i18n-placeholder="attr_email" id="email" name="email" placeholder="you@example.com" required=""
                 type="email" /></div>
-            <div class="field"><label data-i18n="t2_65" for="phone">Phone (optional)</label><input autocomplete="tel"
+            <div class="field"><label data-i18n="t2_65" for="phone">Phone</label><input autocomplete="tel"
                 data-i18n-placeholder="attr_phone" id="phone" name="phone" placeholder="Phone number" type="tel" />
             </div>
-            <div class="field"><label data-i18n="t3_66" for="area">City or neighborhood *</label><input
-                data-i18n-placeholder="attr_area" id="area" name="area" placeholder="e.g. Laval, Montreal"
-                required="" /></div>
+            <div class="field"><label data-i18n="t3_66" for="area">Zip code *</label><input
+                data-i18n-placeholder="attr_area" id="area" name="area" placeholder="e.g. H7V 1N2" required="" /></div>
             <div class="field full"><label data-i18n="t4_67" for="service">What do you need? *</label>
               <select id="service" name="service" required="">
                 <option data-i18n="t0_69" value="">Choose a service</option>
@@ -244,8 +1187,12 @@
                 data-i18n-placeholder="attr_details" id="details" name="details"
                 placeholder="Item names, links, sizes, wall type if known, and preferred dates..."
                 required=""></textarea></div>
-            <div class="field full"><button class="button button-primary" data-i18n="t0_73" type="submit">Send quote
-                request by email →</button>
+            <div class="field full">
+              <div class="form-actions">
+                <button class="button button-primary" data-i18n="t0_73" type="submit">Send quote request by email
+                  →</button>
+                <a class="button button-light" data-i18n="t2_86" href="#direct-contacts">Contact me</a>
+              </div>
               <p class="form-note" data-i18n="t0_74">This opens your email app with the request filled in. The website
                 does not store or send your information.</p>
             </div>
@@ -305,7 +1252,9 @@
   <div class="modal-backdrop" id="privacy-modal">
     <div class="modal-card">
       <h3 data-i18n="t8_1">Privacy Policy</h3>
-      <p data-i18n="t8_2">This website does not use tracking cookies, analytics pixels, or store your personal data on external servers. Form submissions directly open your personal email client to send a message. Your information remains entirely private.</p>
+      <p data-i18n="t8_2">This website does not use tracking cookies, analytics pixels, or store your personal data on
+        external servers. Form submissions directly open your personal email client to send a message. Your information
+        remains entirely private.</p>
       <button class="modal-close" data-i18n="t8_3" id="privacy-close">Close</button>
     </div>
   </div>
@@ -313,25 +1262,29 @@
   <script>
     const BUSINESS_EMAIL = "alex.handyman.montreal@gmail.com";
     const translations = {
-      "t0_0": { "fr": "Laval et Montréal · Français, English, Русский", "en": "Laval & Montréal · Français, English, Русский", "ru": "Лаваль и Монреаль · Français, English, Русский" },
-      "t1_1": { "fr": "Soirs et fins de semaine", "en": "Evenings and weekends available", "ru": "Доступен по вечерам и в выходные" },
-      "t0_2": { "fr": "Services", "en": "Services", "ru": "Услуги" },
-      "t1_3": { "fr": "Pourquoi me choisir", "en": "Why choose me", "ru": "Почему я" },
+      "t0_0": { "fr": "Laval, Montréal et Rives · Français, English, Русский", "en": "Laval, Montreal & Surrounding Shores · Français, English, Русский", "ru": "Лаваль, Монреаль и пригороды · Français, English, Русский" },
+      "t1_1": {
+        "fr": "Disponible en semaine, en soirée et la fin de semaine",
+        "en": "Available weekdays, evenings & weekends",
+        "ru": "Работаю в будни, по вечерам и в выходные"
+      }, "t0_2": { "fr": "Services", "en": "Services", "ru": "Услуги" },
+      "t1_3": { "fr": "Pourquoi me choisir", "en": "Why choose me", "ru": "Почему выбирают меня" },
       "t2_4": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
-      "t3_5": { "fr": "Obtenir un devis", "en": "Get a quote", "ru": "Рассчитать цену" },
-      "t0_6": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture Assembly & Wall Mounting", "ru": "Сборка мебели и крепление на стены" },
-      "t0_7": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture assembly & wall mounting", "ru": "Сборка мебели и крепление на стены" },
-      "t0_8": { "fr": "Assemblage de meubles.<br><span>Fixation murale.</span>", "en": "Furniture assembly.<br><span>Wall mounting.</span>", "ru": "Сборка мебели.<br><span>Монтаж на стены.</span>" },
-      "t0_9": { "fr": "Besoin d’aide pour assembler des meubles ou fixer des objets au mur à Laval ou à Montréal ? Je travaille avec soin, propose des prix clairs à l’avance et offre des rendez-vous flexibles.", "en": "Need furniture assembled or items mounted on the wall in Laval or Montréal? I offer careful work, upfront pricing, and flexible appointments.", "ru": "Нужна помощь со сборкой мебели или навеской предметов на стены в Лавале или Монреале? Аккуратная работа, четкие цены заранее и гибкий график." },
-      "t0_10": { "fr": "Obtenir un devis gratuit <span aria-hidden=\"true\">→</span>", "en": "Get a free quote <span aria-hidden=\"true\">→</span>", "ru": "Бесплатный расчет цены <span aria-hidden=\"true\">→</span>" },
+      "t3_5": { "fr": "Soumission", "en": "Get a quote", "ru": "Рассчитать цену" },
+      "t0_6": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture Assembly & Wall Mounting", "ru": "Сборка мебели и настенный монтаж" },
+      "t0_7": { "fr": "Assemblage de meubles et fixation murale", "en": "Furniture assembly & wall mounting", "ru": "Сборка мебели и настенный монтаж" },
+      "t0_8": { "fr": "Assemblage de meubles.<br><span>Fixation murale.</span>", "en": "Furniture assembly.<br><span>Wall mounting.</span>", "ru": "Сборка мебели.<br><span>Настенный монтаж.</span>" },
+      "t0_9": { "fr": "Besoin d’aide pour assembler des meubles ou fixer des objets au mur à Laval ou à Montréal ? Je travaille avec soin, propose des prix clairs à l’avance et offre des rendez-vous flexibles.", "en": "Need furniture assembled or items mounted on the wall in Laval or Montréal? I offer careful work, upfront pricing, and flexible appointments.", "ru": "Нужна помощь со сборкой мебели или креплением предметов на стены в Лавале или Монреале? Аккуратная работа, четкие цены и гибкий график." },
+      "t0_10": { "fr": "Soumission", "en": "Get a quote", "ru": "Рассчитать цену" },
       "t1_11": { "fr": "Voir les services", "en": "See services", "ru": "Смотреть услуги" },
+      "t2_86": { "fr": "Me contacter", "en": "Contact me", "ru": "Связаться" },
       "t0_12": { "fr": "Prix clairs", "en": "Clear prices", "ru": "Честные цены" },
       "t1_13": { "fr": "Travail soigné", "en": "Careful work", "ru": "Аккуратная работа" },
       "t2_14": { "fr": "Horaires flexibles", "en": "Flexible times", "ru": "Гибкое время" },
-      "t0_15": { "fr": "Un service fiable<br>pour votre maison", "en": "Reliable help<br>around your home", "ru": "Надежная помощь<br>для вашего дома" },
+      "t0_15": { "fr": "Un service fiable<br>pour votre maison", "en": "Reliable help<br>around your home", "ru": "Надежная помощь<br>по дому" },
       "t0_16": { "fr": "Mes services", "en": "What I do", "ru": "Что я делаю" },
       "t0_17": { "fr": "Des services pratiques pour la maison.", "en": "Practical home services.", "ru": "Практичные услуги для дома." },
-      "t0_18": { "fr": "Des meubles en kit à la fixation murale, je vous aide avec les travaux qui demandent du temps, des outils et du soin.", "en": "From flat-pack furniture to wall mounting, I can help with jobs that require time, tools, and care.", "ru": "От сборки мебели в коробках до настенного монтажа — помогу с задачами, требующими времени, инструмента и аккуратности." },
+      "t0_18": { "fr": "Du montage de meubles en kit et d’équipements de gym à la fixation murale, je peux vous aider avec les travaux qui demandent du temps, des outils et du soin.", "en": "From flat-pack furniture and gym equipment assembly to wall mounting, I can help with jobs that require time, tools, and care.", "ru": "От сборки мебели и спортивного оборудования до настенного монтажа — я помогу с работами, требующими времени, инструментов и аккуратности." },
       "t0_19": { "fr": "Assemblage de meubles", "en": "Furniture assembly", "ru": "Сборка мебели" },
       "t1_20": { "fr": "Fixation murale et ancrage", "en": "Wall mounting & anchoring", "ru": "Настенный монтаж и крепление" },
       "t0_21": { "fr": "J’assemble les meubles de maison et de bureau en suivant les instructions du fabricant.", "en": "I assemble home and office furniture according to the manufacturer’s instructions.", "ru": "Собираю домашнюю и офисную мебель в строгом соответствии с инструкциями производителя." },
@@ -340,22 +1293,32 @@
       "t1_24": { "fr": "Lits, bureaux, commodes et meubles TV", "en": "Beds, desks, dressers, and TV stands", "ru": "Кровати, столы, комоды и ТВ-тумбы" },
       "t2_25": { "fr": "Armoires, bibliothèques et meubles de bureau", "en": "Wardrobes, bookcases, and office furniture", "ru": "Шкафы, книжные полки и офисная мебель" },
       "t3_26": { "fr": "Étagères, miroirs et tringles à rideaux", "en": "Shelves, mirrors, and curtain rods", "ru": "Полки, зеркала и карнизы для штор" },
-      "t4_27": { "fr": "Supports muraux pour téléviseurs (selon votre installation)", "en": "TV wall mounts (checked for your specific setup)", "ru": "Кронштейны для телевизоров (с проверкой вашей стены)" },
+      "t4_27": { "fr": "Supports muraux pour téléviseurs (selon votre installation)", "en": "TV wall mounts (checked for your specific setup)", "ru": "Кронштейны для телевизоров (с проверкой внутренней структуры стены)" },
       "t5_28": { "fr": "Fixation des meubles au mur pour plus de sécurité", "en": "Securing furniture to walls for safety", "ru": "Крепление тяжелой мебели к стене для безопасности" },
       "t0_29": { "fr": "Certaines installations peuvent être soumises à des règles locales ou à des exigences de permis. N’hésitez pas à me parler de votre projet.", "en": "Some installations may be restricted by local regulations or licensing requirements. Please ask about your project.", "ru": "Некоторые виды монтажа могут подпадать под местные правила или требования к лицензированию. Уточняйте детали вашего проекта." },
       "t0_30": { "fr": "Pourquoi faire appel à moi", "en": "Why hire me", "ru": "Почему выбирают меня" },
       "t0_31": { "fr": "Un service personnalisé du début à la fin.", "en": "Personal service from start to finish.", "ru": "Персональный подход от начала и до конца." },
-      "t0_32": { "fr": "Je m’appelle Alexey et je propose des services simples et fiables d’assemblage de meubles et de fixation murale à Laval et à Montréal.", "en": "I’m Alexey, and I provide straightforward furniture assembly and wall-mounting services in Laval and Montréal.", "ru": "Меня зовут Алексей. Я предлагаю надежные и понятные услуги по сборке мебели и настенному монтажу в Лавале и Монреале." },
-      "t1_33": { "fr": "Expliquez-moi ce qu’il faut faire et envoyez quelques photos ou un lien du produit. Je vous confirmerai si je peux vous aider et vous donnerai un prix avant de réserver.", "en": "Tell me what you need, send a few photos or a product link, and I’ll confirm whether I can help and provide a price before we book.", "ru": "Расскажите, что нужно сделать, отправьте несколько фото или ссылку на товар, и я подтвержу возможность выполнения заказа и назову цену до начала работ." },
+      "t0_32": { "fr": "Je m’appelle Alexey et je propose des services simples et fiables d’assemblage de meubles et de fixation murale à Laval et à Montréal.", "en": "I’m Alexey, and I provide straightforward furniture assembly and wall-mounting services in Laval and Montréal.", "ru": "Меня зовут Алексей. Я предлагаю надежные услуги по сборке мебели и настенному монтажу в Лавале и Монреале." },
+      "t1_33": { "fr": "Expliquez-moi ce qu’il faut faire et envoyez quelques photos ou un lien du produit. Je vous confirmerai si je peux vous aider et vous donnerai un prix avant de réserver.", "en": "Tell me what you need, send a few photos or a product link, and I’ll confirm whether I can help and provide a price before we book.", "ru": "Расскажите что нужно сделать, отправьте несколько фото или ссылку на товар, и я подтвержу возможность выполнения заказа и назову цену до начала работ." },
       "t0_34": { "fr": "Prix transparents", "en": "Clear details", "ru": "Прозрачные условия" },
       "t1_35": { "fr": "Travail soigné", "en": "Careful handling", "ru": "Бережное обращение" },
       "t2_36": { "fr": "Horaires pratiques", "en": "Convenient times", "ru": "Удобное время" },
-      "t3_37": { "fr": "Trois langues", "en": "Three languages", "ru": "Три языка" },
+      "t3_37": {
+        "fr": "Bons outils et expertise",
+        "en": "Right tools & skills",
+        "ru": "Профессиональный инструмент"
+      },
       "t0_38": { "fr": "Vous saurez ce qui est inclus et le prix avant le début du travail.", "en": "You’ll know what’s included and the price before work begins.", "ru": "Вы заранее будете знать стоимость и то, что входит в работу." },
       "t1_39": { "fr": "Je prends soin de vos meubles, de vos planchers, de vos murs et de votre domicile.", "en": "I take care to protect your furniture, floors, walls, and home.", "ru": "Я аккуратно обращусь с вашей мебелью, полами, стенами и имуществом." },
-      "t2_40": { "fr": "Rendez-vous en soirée et la fin de semaine, sur entente.", "en": "Evening and weekend appointments by arrangement.", "ru": "Встречи по вечерам и в выходные дни по предварительной договоренности." },
-      "t3_41": { "fr": "Service disponible : Français, English, Русский.", "en": "Languages: Français, English, Русский.", "ru": "Обслуживание на французском, английском и русском языках." },
-      "t0_42": { "fr": "Comment ça fonctionne", "en": "How it works", "ru": "Как это работает" },
+      "t2_40": {
+        "fr": "Rendez-vous flexibles en semaine, en soirée et la fin de semaine.",
+        "en": "Flexible weekday, evening, and weekend appointments.",
+        "ru": "Гибкое время: будни, вечера и выходные по предварительной договоренности."
+      }, "t3_41": {
+        "fr": "Équipé d’outils professionnels et du savoir-faire technique pour un travail bien fait.",
+        "en": "Equipped with professional tools and technical know-how for a solid assembly.",
+        "ru": "Полный набор инструмента и технический опыт для правильного и надежного монтажа."
+      }, "t0_42": { "fr": "Comment ça fonctionne", "en": "How it works", "ru": "Как это работает" },
       "t0_43": { "fr": "Trois étapes simples.", "en": "Three simple steps.", "ru": "Три простых шага." },
       "t0_44": { "fr": "Envoyez les détails", "en": "Send details", "ru": "Отправьте детали" },
       "t1_45": { "fr": "Obtenez un prix", "en": "Get a price", "ru": "Узнайте цену" },
@@ -365,21 +1328,29 @@
       "t2_49": { "fr": "Si le prix vous convient, nous conviendrons d’un rendez-vous.", "en": "If you’d like to proceed, we’ll arrange a convenient appointment.", "ru": "Если вас всё устроит, мы согласуем удобное время визита." },
       "t0_50": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
       "t0_51": { "fr": "Contactez-moi directement", "en": "Reach out directly", "ru": "Связаться напрямую" },
-      "t0_52": { "fr": "Une question ou prêt à commencer ? Appelez-moi, écrivez-moi ou envoyez-moi un message.", "en": "Have a question or ready to get started? Call, email, or message me.", "ru": "Есть вопросы или готовы начать? Позвоните, напишите на почту или в соцсети." },
+      "t0_52": { "fr": "Une question ou prêt à commencer ? Appelez-moi, écrivez-moi ou envoyez-moi un message.", "en": "Have a question or ready to get started? Call, email, or message me.", "ru": "Есть вопросы? Позвоните, напишите на почту или в соцсети." },
       "t0_53": { "fr": "Téléphone / WhatsApp", "en": "Phone / WhatsApp", "ru": "Телефон / WhatsApp" },
       "t1_54": { "fr": "Courriel", "en": "Email", "ru": "Эл. почта" },
       "t2_55": { "fr": "Facebook", "en": "Facebook", "ru": "Фейсбук" },
       "t0_56": { "fr": "Visiter ma page Facebook →", "en": "Visit Facebook Page →", "ru": "Страница в Facebook →" },
-      "t0_57": { "fr": "Parlons de votre projet", "en": "Let’s talk", "ru": "Обсудим ваш проект" },
-      "t0_58": { "fr": "Demander un devis.", "en": "Request a quote.", "ru": "Запрос оценки." },
+      "t0_57": { "fr": "Parlons de votre projet", "en": "Let’s talk", "ru": "Расскажите о вашем проекте" },
+      "t0_58": { "fr": "Demander une soumission.", "en": "Request a quote.", "ru": "Запросить расчет стоимости." },
       "t0_59": { "fr": "Décrivez brièvement votre projet pour m’aider à préparer une estimation précise. Vous n’êtes pas obligé de réserver.", "en": "Share a few project details so I can provide a more accurate estimate. There’s no obligation to book.", "ru": "Опишите проект, чтобы я подготовил точную оценку. Это вас ни к чему не обязывает." },
-      "t0_60": { "fr": "<b>Secteur desservi</b><br>Laval et Montréal (indiquez votre quartier)", "en": "<b>Service area</b><br>Laval & Montréal (let me know your neighborhood)", "ru": "<b>Зона обслуживания</b><br>Лаваль и Монреаль (укажите ваш район)" },
-      "t1_61": { "fr": "<b>Disponibilités</b><br>Soirs et fins de semaine, sur entente", "en": "<b>Hours</b><br>Evenings and weekends by arrangement", "ru": "<b>Часы работы</b><br>Вечера и выходные по договоренности" },
-      "t2_62": { "fr": "<b>Langues</b><br>Français, English, Русский", "en": "<b>Languages</b><br>French, English, and Russian", "ru": "<b>Языки</b><br>Французский, английский, русский" },
+      "t0_60": {
+        "fr": "<b>Secteur desservi</b><br>Laval et Montréal (autres secteurs possibles, frais de déplacement en sus)",
+        "en": "<b>Service area</b><br>Laval & Montréal (other areas considered; travel fee may apply)",
+        "ru": "<b>Зона обслуживания</b><br>Лаваль и Монреаль (возможен выезд в другие районы, уточняйте)"
+      },
+      "t1_61": {
+        "fr": "<b>Disponibilités</b><br>En semaine, soirs et fins de semaine",
+        "en": "<b>Hours</b><br>Weekdays, evenings, and weekends",
+        "ru": "<b>Часы работы</b><br>Будни, вечера и выходные"
+      }, "t2_62": { "fr": "<b>Langues</b><br>Français, English, Русский", "en": "<b>Languages</b><br>French, English, and Russian", "ru": "<b>Языки</b><br>Французский, английский, русский" },
       "t0_63": { "fr": "Votre nom *", "en": "Your name *", "ru": "Ваше имя *" },
       "t1_64": { "fr": "Courriel *", "en": "Email *", "ru": "Эл. почта *" },
-      "t2_65": { "fr": "Téléphone (facultatif)", "en": "Phone (optional)", "ru": "Телефон (необязательно)" },
-      "t3_66": { "fr": "Ville ou quartier *", "en": "City or neighborhood *", "ru": "Город или район *" },
+      "t2_65": { "fr": "Téléphone", "en": "Phone", "ru": "Телефон" },
+      "attr_phone": { "fr": "Numéro de téléphone", "en": "Phone number", "ru": "Номер телефона" },
+      "t3_66": { "fr": "Code postal *", "en": "Zip code *", "ru": "Почтовый индекс *" },
       "t4_67": { "fr": "De quoi avez-vous besoin ? *", "en": "What do you need? *", "ru": "Что вам требуется? *" },
       "t5_68": { "fr": "Détails du projet *", "en": "Project details *", "ru": "Детали проекта *" },
       "t0_69": { "fr": "Choisir un service", "en": "Choose a service", "ru": "Выберите услугу" },
@@ -388,10 +1359,10 @@
       "t3_72": { "fr": "Plusieurs articles / Autre", "en": "Multiple items / Other", "ru": "Несколько предметов / Другое" },
       "t0_73": { "fr": "Envoyer la demande par courriel →", "en": "Send quote request by email →", "ru": "Отправить запрос по почте →" },
       "t0_74": { "fr": "Ce bouton ouvre votre application de courriel avec le message prérempli. Le site ne stocke ni n’envoie vos renseignements.", "en": "This opens your email app with the request filled in. The website does not store or send your information.", "ru": "Кнопка откроет почтовое приложение с готовым письмом. Сайт не собирает и не хранит ваши данные." },
-      "t0_75": { "fr": "Assemblage de meubles et fixation murale · Laval et Montréal", "en": "Furniture Assembly & Wall Mounting · Laval & Montréal", "ru": "Сборка мебели и монтаж на стены · Лаваль и Монреаль" },
+      "t0_75": { "fr": "Assemblage de meubles et fixation murale<br>Laval, Montréal et Rives", "en": "Furniture Assembly & Wall Mounting<br>Laval, Montreal & Surrounding Shores", "ru": "Сборка мебели и настенный монтаж<br>Лаваль, Монреаль и пригороды" },
       "t0_76": { "fr": "Services", "en": "Services", "ru": "Услуги" },
       "t1_77": { "fr": "Contact", "en": "Contact", "ru": "Контакты" },
-      "t2_78": { "fr": "Obtenir un devis", "en": "Get a quote", "ru": "Рассчитать цену" },
+      "t2_78": { "fr": "Demander une soumission", "en": "Get a quote", "ru": "Рассчитать цену" },
       "t3_79": { "fr": "Retour en haut ↑", "en": "Back to top ↑", "ru": "Наверх ↑" },
       "t0_80": { "fr": "Assemblage d’équipements de gym", "en": "Gym equipment assembly", "ru": "Сборка спортивного инвентаря" },
       "t0_81": { "fr": "J’assemble les équipements de mise en forme à domicile en suivant les instructions du fabricant.", "en": "I assemble home fitness equipment according to the manufacturer’s instructions.", "ru": "Собираю домашние тренажеры и спортивное оборудование по инструкции производителя." },
@@ -401,15 +1372,14 @@
       "t0_85": { "fr": "Assemblage d’équipements de gym", "en": "Gym equipment assembly", "ru": "Сборка спортивного инвентаря" },
       "attr_name": { "fr": "Nom", "en": "Name", "ru": "Имя" },
       "attr_email": { "fr": "vous@exemple.com", "en": "you@example.com", "ru": "you@example.com" },
-      "attr_phone": { "fr": "Numéro de téléphone", "en": "Phone number", "ru": "Номер телефона" },
-      "attr_area": { "fr": "ex. Laval, Montréal", "en": "e.g. Laval, Montreal", "ru": "напр. Лаваль, Монреаль" },
+      "attr_area": { "fr": "ex. H7V 1N2", "en": "e.g. H7V 1N2", "ru": "напр. H7V 1N2" },
       "attr_details": { "fr": "Noms des articles, liens, dimensions, type de mur si connu et dates souhaitées…", "en": "Item names, links, sizes, wall type if known, and preferred dates...", "ru": "Названия предметов, ссылки, размеры, тип стен (если известен) и желаемые даты..." },
       "t8_0": { "fr": "Politique de confidentialité", "en": "Privacy policy", "ru": "Конфиденциальность" },
       "t8_1": { "fr": "Politique de confidentialité", "en": "Privacy Policy", "ru": "Политика конфиденциальности" },
       "t8_2": { "fr": "Ce site Web n'utilise pas de témoins (cookies) de suivi, de pixels d'analyse et ne stocke pas vos renseignements personnels sur des serveurs. Le formulaire ouvre directement votre application de messagerie. Vos données restent entièrement privées.", "en": "This website does not use tracking cookies, analytics pixels, or store your personal data on servers. Submitting the form directly opens your personal email client. Your information remains entirely private.", "ru": "Этот сайт не использует файлы cookie для отслеживания, аналитические пиксели и не хранит ваши личные данные на серверах. Отправка формы напрямую открывает вашу почтовую программу. Ваши данные остаются конфиденциальными." },
       "t8_3": { "fr": "Fermer", "en": "Close", "ru": "Закрыть" }
     };
-    
+
     let currentLanguage = "fr";
     function setLanguage(language) {
       currentLanguage = language;
@@ -460,15 +1430,15 @@
       event.preventDefault();
       const data = new FormData(event.currentTarget);
       const subject = encodeURIComponent(
-        currentLanguage === "fr" ? "Demande de devis - assemblage de meubles, fixation murale ou équipements de gym" :
-        currentLanguage === "ru" ? "Запрос расчета цены - сборка мебели, монтаж на стены или тренажеры" :
-        "Furniture assembly, wall mounting, or gym equipment quote request"
+        currentLanguage === "fr" ? "Demander une soumission - assemblage de meubles, fixation murale ou équipements de gym" :
+          currentLanguage === "ru" ? "Запрос расчета цены - сборка мебели, монтаж на стены или тренажеры" :
+            "Furniture assembly, wall mounting, or gym equipment quote request"
       );
-      const labels = 
-        currentLanguage === "fr" ? ["Nom", "Courriel", "Téléphone", "Secteur", "Service", "Détails du projet"] :
-        currentLanguage === "ru" ? ["Имя", "Эл. почта", "Телефон", "Район", "Услуга", "Детали проекта"] :
-        ["Name", "Email", "Phone", "Area", "Service", "Project details"];
-      
+      const labels =
+        currentLanguage === "fr" ? ["Nom", "Courriel", "Téléphone", "Code postal", "Service", "Détails du projet"] :
+          currentLanguage === "ru" ? ["Имя", "Эл. почта", "Телефон", "Почтовый индекс", "Услуга", "Детали проекта"] :
+            ["Name", "Email", "Phone", "Zip code", "Service", "Project details"];
+
       const serviceValue = data.get("service");
       const serviceMap = {
         "Furniture assembly": "Assemblage de meubles",
@@ -484,7 +1454,7 @@
         "Сборка спортивного инвентаря": "Assemblage d’équipements de gym",
         "Несколько предметов / Другое": "Plusieurs articles / Autre"
       };
-      
+
       const mappedService = serviceMap[serviceValue] || serviceValue;
 
       const body = encodeURIComponent(
